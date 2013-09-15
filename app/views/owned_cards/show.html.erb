@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expansion card:</strong>
+  <%= @owned_card.expansion_card_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @owned_card.user_id %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @owned_card.number %>
+</p>
+
+<%= link_to 'Edit', edit_owned_card_path(@owned_card) %> |
+<%= link_to 'Back', owned_cards_path %>

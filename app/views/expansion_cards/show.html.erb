@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @expansion_card.card_id %>
+</p>
+
+<p>
+  <strong>Expansion:</strong>
+  <%= @expansion_card.expansion_id %>
+</p>
+
+<%= link_to 'Edit', edit_expansion_card_path(@expansion_card) %> |
+<%= link_to 'Back', expansion_cards_path %>

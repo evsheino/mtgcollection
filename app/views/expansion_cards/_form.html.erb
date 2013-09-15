@@ -1,0 +1,25 @@
+<%= form_for(@expansion_card) do |f| %>
+  <% if @expansion_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expansion_card.errors.count, "error") %> prohibited this expansion_card from being saved:</h2>
+
+      <ul>
+      <% @expansion_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :card_id %><br>
+    <%= f.select :card_id, options_from_collection_for_select(@cards, :id, :to_s) %>
+  </div>
+  <div class="field">
+    <%= f.label :expansion_id %><br>
+    <%= f.select :expansion_id, options_from_collection_for_select(@expansions, :id, :to_s) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
