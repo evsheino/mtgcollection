@@ -5,5 +5,16 @@
   <%= @expansion.name %>
 </p>
 
+<div>
+  <strong>Cards</strong>
+  <ul>
+    <% @expansion.cards.each do |card| %>
+      <li>
+        <%= link_to card, card %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
 <%= link_to 'Edit', edit_expansion_path(@expansion) %> |
 <%= link_to 'Back', expansions_path %>

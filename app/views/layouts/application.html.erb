@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mtgcollection</title>
+  <title>MtG Collection</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<nav>
+  <%= link_to 'Cards', cards_path %> |
+  <%= link_to 'Expansions', expansions_path %> |
+</nav>
 
 <%= yield %>
 

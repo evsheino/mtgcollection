@@ -4,6 +4,16 @@
   <strong>Name:</strong>
   <%= @card.name %>
 </p>
+<div>
+  <strong>Expansions</strong>
+  <ul>
+    <% @card.expansions.each do |expansion| %>
+    <li>
+      <%= link_to expansion, expansion %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>

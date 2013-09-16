@@ -7,7 +7,7 @@
     <file path="/Dummy.txt" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379277018380" ignored="false" />
     <file path="/expansion_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379273196501" ignored="false" />
     <file path="/_form.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379276466469" ignored="false" />
-    <file path="/expansion.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379273323107" ignored="false" />
+    <file path="/expansion.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379329208073" ignored="false" />
     <file path="/expansion_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379273440787" ignored="false" />
     <file path="/owned_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379273602421" ignored="false" />
     <file path="/user.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379277404809" ignored="false" />
@@ -19,8 +19,10 @@
     <file path="/a.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379274077389" ignored="false" />
     <file path="/a.less" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379274092942" ignored="false" />
     <file path="/a.sql" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379274105539" ignored="false" />
-    <file path="/cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379320734482" ignored="false" />
+    <file path="/cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379328756190" ignored="false" />
     <file path="/users_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379277235635" ignored="false" />
+    <file path="/application.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379327940104" ignored="false" />
+    <file path="/show.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379329149555" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +42,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="3" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="card.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/card.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,28 +51,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cards_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="cards_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="10" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.45888594">
+            <state line="11" column="10" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="9" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="-5.8846154">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/expansions/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="21" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
+            <state line="14" column="13" selection-start="244" selection-end="244" vertical-scroll-proportion="-9.153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expansion_cards_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="31" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/cards/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="88" selection-end="267" vertical-scroll-proportion="-3.9230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expansion.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/expansion.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.06957708">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expansions_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/expansions_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="10" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,7 +135,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/expansion_cards/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/expansion.rb" />
         <option value="$PROJECT_DIR$/app/models/expansion_card.rb" />
         <option value="$PROJECT_DIR$/app/models/owned_card.rb" />
         <option value="$PROJECT_DIR$/app/models/card.rb" />
@@ -114,7 +142,12 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/cards/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/cards_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/cards/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/expansions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/expansions/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/expansion.rb" />
       </list>
     </option>
   </component>
@@ -204,7 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -222,7 +255,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expansions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -536,38 +595,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="31" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/owned_card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="39" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/expansion_card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/expansion.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="57" selection-end="57" vertical-scroll-proportion="0.067639254" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="31" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/expansion_card.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="23" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" />
@@ -597,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="3" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
@@ -625,9 +645,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="21" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="10" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.45888594">
+        <state line="11" column="10" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/cards/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="88" selection-end="267" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/expansions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="10" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="31" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/expansions/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="244" selection-end="244" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/expansion.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.06957708">
           <folding />
         </state>
       </provider>
