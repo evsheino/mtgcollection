@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, only: [:new, :create, :destroy]
+  skip_before_filter :authenticate, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -63,13 +63,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def authenticate
-    admin_accounts = { "admin" => "secret" }
-    authenticate_or_request_with_http_basic do |username, password|
-      admin_accounts[username] == password
-    end
-  end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user

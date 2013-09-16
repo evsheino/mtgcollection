@@ -10,8 +10,16 @@
 
 <nav>
   <%= link_to 'Cards', cards_path %> |
-  <%= link_to 'Expansions', expansions_path %> |
+  <%= link_to 'Expansions', expansions_path %>
+  <% if signed_in? %>
+    | <%= current_user %>
+    (<%= link_to 'Log Out', logout_path %>)
+  <% end %>
 </nav>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
 
 <%= yield %>
 
