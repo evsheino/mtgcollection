@@ -15,8 +15,7 @@
   <tbody>
     <% @owned_cards.each do |owned_card| %>
       <tr>
-        <td><%= owned_card.expansion_card_id %></td>
-        <td><%= owned_card.user_id %></td>
+        <td><%= owned_card %></td>
         <td><%= owned_card.number %></td>
         <td><%= link_to 'Show', owned_card %></td>
         <td><%= link_to 'Edit', edit_owned_card_path(owned_card) %></td>

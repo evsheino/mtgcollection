@@ -11,9 +11,9 @@ Mtgcollection::Application.routes.draw do
 
   resources :sessions
 
-  get 'signup' => 'users#new',            via: 'get'
-  get 'login' => 'sessions#new',         via: 'get'
-  get 'logout' => 'sessions#destroy',     via: 'delete'
+  get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy', via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

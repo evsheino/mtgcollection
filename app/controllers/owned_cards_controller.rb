@@ -15,6 +15,7 @@ class OwnedCardsController < ApplicationController
   # GET /owned_cards/new
   def new
     @owned_card = OwnedCard.new
+    @cards = ExpansionCard.joins(:card).order('name').all
   end
 
   # GET /owned_cards/1/edit
@@ -25,6 +26,7 @@ class OwnedCardsController < ApplicationController
   # POST /owned_cards.json
   def create
     @owned_card = OwnedCard.new(owned_card_params)
+    @owned_card.user = current_user
 
     respond_to do |format|
       if @owned_card.save
