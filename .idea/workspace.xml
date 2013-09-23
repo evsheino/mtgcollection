@@ -4,14 +4,14 @@
     <list default="true" id="44e08c90-608b-4b8d-b46e-45aa3d795e30" name="Default" comment="" />
     <ignored path="mtgcollection.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379408130941" ignored="false" />
-    <file path="/expansion_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379273196501" ignored="false" />
+    <file path="/Dummy.txt" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379956653678" ignored="false" />
+    <file path="/expansion_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379976372544" ignored="false" />
     <file path="/_form.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379880442304" ignored="false" />
-    <file path="/expansion.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379882099670" ignored="false" />
-    <file path="/expansion_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379876883955" ignored="false" />
-    <file path="/owned_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379882039524" ignored="false" />
+    <file path="/expansion.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379957122418" ignored="false" />
+    <file path="/expansion_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379959739442" ignored="false" />
+    <file path="/owned_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379977010427" ignored="false" />
     <file path="/user.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379876706766" ignored="false" />
-    <file path="/card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379881290890" ignored="false" />
+    <file path="/card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379956712644" ignored="false" />
     <file path="/a.xml" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379274070938" ignored="false" />
     <file path="/a.rxml" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379274076485" ignored="false" />
     <file path="/a.html" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379274049810" ignored="false" />
@@ -23,7 +23,7 @@
     <file path="/users_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379367579362" ignored="false" />
     <file path="/application.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379367216775" ignored="false" />
     <file path="/show.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379329149555" ignored="false" />
-    <file path="/Gemfile" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379332310638" ignored="false" />
+    <file path="/Gemfile" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379975480280" ignored="false" />
     <file path="/new.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379881187026" ignored="false" />
     <file path="/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379876232661" ignored="false" />
     <file path="/sessions_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379709221151" ignored="false" />
@@ -41,7 +41,9 @@
     <file path="$PROJECT_DIR$/../ratebeer/config/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379668887852" ignored="false" />
     <file path="$PROJECT_DIR$/../ratebeer/log/development.log" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379875851670" ignored="false" />
     <file path="/a.dummy" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379876037898" ignored="false" />
-    <file path="/owned_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379882294629" ignored="false" />
+    <file path="/owned_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379976389397" ignored="false" />
+    <file path="/Ruby Console" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379974702100" ignored="false" />
+    <file path="/index.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379976005715" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +63,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/owned_cards/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,28 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="owned_card.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="owned_card.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/owned_card.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="3" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/owned_cards/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="-7.8461537">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/owned_cards/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.07005495">
+            <state line="7" column="61" selection-start="289" selection-end="289" vertical-scroll-proportion="0.15782493">
               <folding />
             </state>
           </provider>
@@ -100,16 +93,31 @@
       <file leaf-file-name="owned_cards_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/owned_cards_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+            <state line="6" column="47" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/expansion_cards/_form.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/expansion_cards/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="32" selection-start="111" selection-end="111" vertical-scroll-proportion="-1.3076923">
+            <state line="26" column="4" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1379976008322" expanded="true" signature="40:639" placeholder="..." />
+                <marker date="1379976008322" expanded="true" signature="50:173" placeholder="..." />
+                <marker date="1379976008322" expanded="true" signature="59:162" placeholder="..." />
+                <marker date="1379976008322" expanded="true" signature="184:630" placeholder="..." />
+                <marker date="1379976008322" expanded="true" signature="247:605" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expansion_card.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/expansion_card.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="208" selection-end="611" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,24 +133,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/expansions/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/expansion_cards/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/cards/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/models/expansion_card.rb" />
-        <option value="$PROJECT_DIR$/app/views/owned_cards/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/owned_cards/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/owned_cards/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/card.rb" />
-        <option value="$PROJECT_DIR$/app/models/owned_card.rb" />
-        <option value="$PROJECT_DIR$/app/models/expansion.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/owned_cards_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/owned_cards/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/card.rb" />
+        <option value="$PROJECT_DIR$/app/models/expansion.rb" />
+        <option value="$PROJECT_DIR$/app/models/expansion_card.rb" />
+        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/views/expansion_cards/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/owned_cards/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/owned_cards_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/owned_card.rb" />
       </list>
     </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="54" />
@@ -277,13 +292,32 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ratebeer" />
     <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
   </component>
   <component name="RunManager" selected="Rails.Development: mtgcollection">
+    <configuration default="false" name="Rails console: mtgcollection" type="IrbRunConfigurationType" factoryName="IRB console" temporary="true">
+      <module name="mtgcollection" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/bin/rails" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="console" />
+      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="true" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -340,6 +374,23 @@
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="IrbRunConfigurationType" factoryName="IRB console">
+      <module name="" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="false" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
@@ -433,14 +484,22 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Production: mtgcollection" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Development: mtgcollection" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: mtgcollection" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="3" class="java.lang.String" itemvalue="Rails.Production: mtgcollection" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Development: mtgcollection" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: mtgcollection" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -474,18 +533,18 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27882037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21380697" sideWeight="0.6423077" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3576923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -552,88 +611,34 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/expansion_cards/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="26" selection-start="290" selection-end="290" vertical-scroll-proportion="0.39697802">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-4.0.0/lib/active_record/relation/query_methods.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="273" column="8" selection-start="9549" selection-end="9549" vertical-scroll-proportion="0.79217273">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-4.0.0/lib/active_record/querying.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/expansion_card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/expansion_cards/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="22" selection-start="8" selection-end="22" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activerecord-4.0.0/lib/active_record/associations.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1184" column="10" selection-start="60656" selection-end="60656" vertical-scroll-proportion="25.783333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/owned_cards/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="89" selection-end="89" vertical-scroll-proportion="-3.9230769" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/expansion_cards/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="32" selection-start="111" selection-end="111" vertical-scroll-proportion="-1.3076923">
-          <folding />
-        </state>
+        <state line="2" column="32" selection-start="111" selection-end="111" vertical-scroll-proportion="0.046703298" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/owned_card.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/card.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="3" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="31" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/expansion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="39" selection-start="171" selection-end="171" vertical-scroll-proportion="0.09018568">
-          <folding />
-        </state>
+        <state line="5" column="31" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
@@ -643,23 +648,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/expansion_card.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="208" selection-end="611" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="22" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="61" selection-end="61" vertical-scroll-proportion="0.07005495" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/expansion_cards/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1379976008322" expanded="true" signature="40:639" placeholder="..." />
+            <marker date="1379976008322" expanded="true" signature="50:173" placeholder="..." />
+            <marker date="1379976008322" expanded="true" signature="59:162" placeholder="..." />
+            <marker date="1379976008322" expanded="true" signature="184:630" placeholder="..." />
+            <marker date="1379976008322" expanded="true" signature="247:605" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/expansion_cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="240" selection-end="240" vertical-scroll-proportion="0.13527851" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/owned_cards_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+        <state line="6" column="47" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/owned_card.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.07005495">
+        <state line="7" column="61" selection-start="289" selection-end="289" vertical-scroll-proportion="0.15782493">
           <folding />
         </state>
       </provider>

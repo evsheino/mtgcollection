@@ -21,6 +21,8 @@ class ExpansionCardsController < ApplicationController
 
   # GET /expansion_cards/1/edit
   def edit
+    @cards = Card.all
+    @expansions = Expansion.all
   end
 
   # POST /expansion_cards
