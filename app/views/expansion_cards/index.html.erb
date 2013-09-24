@@ -7,16 +7,14 @@
       <th>Expansion</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @expansion_cards.each do |expansion_card| %>
       <tr>
-        <td><%= expansion_card.card_id %></td>
-        <td><%= expansion_card.expansion_id %></td>
-        <td><%= link_to 'Show', expansion_card %></td>
+        <td><%= link_to expansion_card.card, expansion_card.card %></td>
+        <td><%= link_to expansion_card.expansion, expansion_card.expansion %></td>
         <td><%= link_to 'Edit', edit_expansion_card_path(expansion_card) %></td>
         <td><%= link_to 'Destroy', expansion_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

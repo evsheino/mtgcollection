@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
+  <strong><%= @cards.first.card %></strong>
+
   <div class="field">
-    <%= f.label :Card %><br>
-    <%= f.select :expansion_card_id, options_from_collection_for_select(@cards, :id, :to_s) %>
+    <%= f.label :expansion %><br>
+    <%= f.select :expansion_card_id, options_from_collection_for_select(@cards, :id, :expansion) %>
   </div>
   <div class="field">
     <%= f.label :number %><br>

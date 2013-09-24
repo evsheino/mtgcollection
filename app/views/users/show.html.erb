@@ -3,5 +3,29 @@
   <%= @user.username %>
 </p>
 
+<table>
+  <thead>
+  <tr>
+    <th>Card</th>
+    <th>Expansion</th>
+    <th>Number</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @user.owned_cards.each do |owned_card| %>
+    <tr>
+      <td><%= link_to owned_card.card, owned_card.card %></td>
+      <td><%=	link_to owned_card.expansion, owned_card.expansion %></td>
+      <td><%= owned_card.number %></td>
+      <td><%= link_to 'Edit', edit_owned_card_path(owned_card) %></td>
+      <td><%= link_to 'Destroy', owned_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

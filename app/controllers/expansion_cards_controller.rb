@@ -4,7 +4,7 @@ class ExpansionCardsController < ApplicationController
   # GET /expansion_cards
   # GET /expansion_cards.json
   def index
-    @expansion_cards = ExpansionCard.all
+    @expansion_cards = ExpansionCard.joins(:card).order("cards.name").paginate(page: params[:page])
   end
 
   # GET /expansion_cards/1

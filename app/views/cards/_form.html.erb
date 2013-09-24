@@ -16,7 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :expansion_ids %><br>
+    <%= f.label :expansions %><br>
     <%= f.select :expansion_ids, Expansion.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
   </div>
   <div class="actions">

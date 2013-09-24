@@ -5,6 +5,7 @@ class Card < ActiveRecord::Base
   has_many :users, through: :owned_cards
 
   validates_uniqueness_of :name
+  validates_presence_of :expansions
 
   def to_s
     name

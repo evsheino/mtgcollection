@@ -4,7 +4,7 @@ class OwnedCardsController < ApplicationController
   # GET /owned_cards
   # GET /owned_cards.json
   def index
-    @owned_cards = OwnedCard.paginate(:page => params[:page])
+    @owned_cards = OwnedCard.paginate(page: params[:page])
   end
 
   # GET /owned_cards/1
@@ -15,11 +15,12 @@ class OwnedCardsController < ApplicationController
   # GET /owned_cards/new
   def new
     @owned_card = OwnedCard.new
-    @cards = ExpansionCard.joins(:card).order('name').all
+    @cards = ExpansionCard.where(card_id: params[:card_id])
   end
 
   # GET /owned_cards/1/edit
   def edit
+    @cards = @owned_card.expansion_card.card.expansion_cards
   end
 
   # POST /owned_cards
@@ -33,6 +34,7 @@ class OwnedCardsController < ApplicationController
         format.html { redirect_to @owned_card, notice: 'Owned card was successfully created.' }
         format.json { render action: 'show', status: :created, location: @owned_card }
       else
+        @cards = @owned_card.expansion_card.card.expansion_cards
         format.html { render action: 'new' }
         format.json { render json: @owned_card.errors, status: :unprocessable_entity }
       end
