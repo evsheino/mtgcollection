@@ -15,12 +15,9 @@ describe Card do
 
   describe ".search_by_name" do
     let!(:expansion) {FactoryGirl.create :expansion}
-    let!(:card1) {Card.create(name: 'Lightning Bolt')}
-    let!(:card2) {Card.create(name: 'Giant Growth')}
-    let!(:searched_card) {Card.create(name: 'Grey Ogre')}
-    before :each do
-      expansion.cards << [card1, searched_card, card2]
-    end
+    let!(:card1) {Card.create(name: 'Lightning Bolt', expansions: [expansion])}
+    let!(:card2) {Card.create(name: 'Giant Growth', expansions: [expansion])}
+    let!(:searched_card) {Card.create(name: 'Grey Ogre', expansions: [expansion])}
 
     it "exists" do
       expect(Card).to respond_to :search_by_name
