@@ -1,10 +1,17 @@
 language: ruby
-
 rvm:
- - 2.0.0
-
+- 2.0.0
+gemfile: Gemfile.ci
+before_install: gem install bundler --pre
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -f d spec/
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -f d spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: LeP627/qOZGCETA8lKM+Qr+X36vWScrwW5lnvouCHAi3yqu8ixjG8dm1I2lnLVy7hRqketrHmp1NT9D3hZoBv+mtIm5zLTk9DSm82BF5Vunn+7LoD2CuVFFDpjS27/fKbn9ZPvtB4H+p+hlS+OHAMrZ7moD14St8N679oesPgH0=
+  app: safe-cliffs-6194
+  on:
+    repo: evsheino/mtgcollection

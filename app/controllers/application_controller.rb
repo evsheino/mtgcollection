@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate
 
   def authenticate
-    redirect_to login_path if !signed_in?
+    redirect_to signin_path if !signed_in?
   end
 end
