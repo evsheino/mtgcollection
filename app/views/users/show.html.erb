@@ -1,9 +1,6 @@
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<h2><%= @user.username %></h2>
 
-<table>
+<table class="table table-hover">
   <thead>
   <tr>
     <th>Card</th>
@@ -17,7 +14,7 @@
   <tbody>
   <% @user.owned_cards.each do |owned_card| %>
     <tr>
-      <td><%= link_to owned_card.card, card_path(owned_card.card) %></td>
+      <td><%= link_to owned_card.card, printing_path(owned_card.printing) %></td>
       <td><%=	link_to owned_card.expansion, owned_card.expansion %></td>
       <td><%= owned_card.number %></td>
       <td><%= link_to 'Edit', edit_owned_card_path(owned_card) %></td>
@@ -27,5 +24,8 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br/>
+
+<% if @user == current_user %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>

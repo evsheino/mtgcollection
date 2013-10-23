@@ -20,6 +20,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><%= link_to 'Cards', cards_path %></li>
+          <li><%= link_to 'Printings', printings_path %></li>
           <li><%= link_to 'Expansions', expansions_path %></li>
           <% if current_user.nil? %>
               <li><%= link_to 'Sign In', signin_path %></li>
