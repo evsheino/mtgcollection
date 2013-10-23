@@ -1,7 +1,8 @@
 <h1>Card Search</h1>
 
-<%= form_tag search_printings_path, method: 'get' do %>
-  name <%= text_field_tag :name, params[:name] %>
+<%= form_tag printings_path, method: 'get' do %>
+  Name <%= text_field_tag :name, params[:name] %>
+  Expansion <%= text_field_tag :expansion, params[:expansion] %>
   <%= submit_tag "Search", name: nil, class: 'btn btn-primary' %>
 <% end %>
 

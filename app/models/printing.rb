@@ -24,6 +24,11 @@ class Printing < ActiveRecord::Base
     end
   end
 
+  def self.search(name, expansion)
+    joins(:card).joins(:expansion).
+        where("cards.name LIKE ? AND expansions.name LIKE ?", "%#{name}%", "%#{expansion}%")
+  end
+
   def to_s
     "#{card.name} (#{expansion.name})"
   end
