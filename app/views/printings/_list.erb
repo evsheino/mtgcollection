@@ -1,0 +1,19 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Card</th>
+    <th>Expansion</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% printings.each do |printing| %>
+    <tr>
+      <td><%= link_to printing.card, printing %></td>
+      <td><%= link_to printing.expansion, printing.expansion %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -12,6 +12,8 @@ Mtgcollection::Application.routes.draw do
 
   resources :sessions
 
+  get 'search_printings' => 'printings#search'
+
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
   get 'signout' => 'sessions#destroy', via: 'delete'

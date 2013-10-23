@@ -69,5 +69,3 @@ gem 'bootstrap-sass-rails'
 
 # Pagination
 gem 'will_paginate', '~> 3.0'
-
-gem 'cells'

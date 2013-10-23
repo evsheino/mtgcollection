@@ -1,6 +1,11 @@
 class PrintingsController < ApplicationController
   before_action :set_printing, only: [:show, :edit, :update, :destroy]
 
+  def search
+    @printings = Printing.search_by_name(params[:name])
+    render 'index'
+  end
+
   # GET /printings
   # GET /printings.json
   def index
