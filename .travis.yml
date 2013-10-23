@@ -1,6 +1,7 @@
 language: ruby
 rvm:
 - 2.0.0
+gemfile: Gemfile.ci
 before_install:
   - gem install bundler --pre
   - "export DISPLAY=:99.0"
