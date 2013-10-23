@@ -15,12 +15,12 @@ class OwnedCardsController < ApplicationController
   # GET /owned_cards/new
   def new
     @owned_card = OwnedCard.new
-    @cards = ExpansionCard.where(card_id: params[:card_id])
+    @cards = Printing.where(card_id: params[:card_id])
   end
 
   # GET /owned_cards/1/edit
   def edit
-    @cards = @owned_card.expansion_card.card.expansion_cards
+    @cards = @owned_card.printing.card.printings
   end
 
   # POST /owned_cards
@@ -34,7 +34,7 @@ class OwnedCardsController < ApplicationController
         format.html { redirect_to @owned_card, notice: 'Owned card was successfully created.' }
         format.json { render action: 'show', status: :created, location: @owned_card }
       else
-        @cards = @owned_card.expansion_card.card.expansion_cards
+        @cards = @owned_card.printing.card.printings
         format.html { render action: 'new' }
         format.json { render json: @owned_card.errors, status: :unprocessable_entity }
       end
@@ -73,6 +73,6 @@ class OwnedCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def owned_card_params
-      params.require(:owned_card).permit(:expansion_card_id, :user_id, :number)
+      params.require(:owned_card).permit(:printing_id, :user_id, :number)
     end
 end

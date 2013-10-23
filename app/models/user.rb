@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 
   has_many :owned_cards
-  has_many :expansion_cards, through: :owned_cards
-  has_many :cards, through: :expansion_cards
+  has_many :printings, through: :owned_cards
+  has_many :cards, through: :printings
 
   has_secure_password
 

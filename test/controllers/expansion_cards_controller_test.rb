@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ExpansionCardsControllerTest < ActionController::TestCase
   setup do
-    @expansion_card = expansion_cards(:one)
+    @printing = expansion_cards(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:expansion_cards)
+    assert_not_nil assigns(:printings)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ExpansionCardsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create expansion_card" do
-    assert_difference('ExpansionCard.count') do
-      post :create, expansion_card: { card_id: @expansion_card.card_id, expansion_id: @expansion_card.expansion_id }
+  test "should create printing" do
+    assert_difference('Printing.count') do
+      post :create, printing: { card_id: @printing.card_id, expansion_id: @printing.expansion_id }
     end
 
-    assert_redirected_to expansion_card_path(assigns(:expansion_card))
+    assert_redirected_to expansion_card_path(assigns(:printing))
   end
 
-  test "should show expansion_card" do
-    get :show, id: @expansion_card
+  test "should show printing" do
+    get :show, id: @printing
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @expansion_card
+    get :edit, id: @printing
     assert_response :success
   end
 
-  test "should update expansion_card" do
-    patch :update, id: @expansion_card, expansion_card: { card_id: @expansion_card.card_id, expansion_id: @expansion_card.expansion_id }
-    assert_redirected_to expansion_card_path(assigns(:expansion_card))
+  test "should update printing" do
+    patch :update, id: @printing, printing: { card_id: @printing.card_id, expansion_id: @printing.expansion_id }
+    assert_redirected_to expansion_card_path(assigns(:printing))
   end
 
-  test "should destroy expansion_card" do
-    assert_difference('ExpansionCard.count', -1) do
-      delete :destroy, id: @expansion_card
+  test "should destroy printing" do
+    assert_difference('Printing.count', -1) do
+      delete :destroy, id: @printing
     end
 
     assert_redirected_to expansion_cards_path

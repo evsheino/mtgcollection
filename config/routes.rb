@@ -1,7 +1,8 @@
 Mtgcollection::Application.routes.draw do
+  get "places/index"
   resources :owned_cards
 
-  resources :expansion_cards
+  resources :printings
 
   resources :expansions
 

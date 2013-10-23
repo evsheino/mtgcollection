@@ -1,4 +1,4 @@
-class ExpansionCard < ActiveRecord::Base
+class Printing < ActiveRecord::Base
   belongs_to :card
   belongs_to :expansion
   has_many :owned_cards

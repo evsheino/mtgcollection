@@ -1,10 +1,10 @@
-<%= form_for(@expansion_card) do |f| %>
-  <% if @expansion_card.errors.any? %>
+<%= form_for(@printing) do |f| %>
+  <% if @printing.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@expansion_card.errors.count, "error") %> prohibited this expansion_card from being saved:</h2>
+      <h2><%= pluralize(@printing.errors.count, "error") %> prohibited this printing from being saved:</h2>
 
       <ul>
-      <% @expansion_card.errors.full_messages.each do |msg| %>
+      <% @printing.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

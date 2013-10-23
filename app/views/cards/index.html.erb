@@ -4,9 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -14,9 +11,6 @@
     <% @cards.each do |card| %>
       <tr>
         <td><%= link_to card, card %></td>
-        <td><%= link_to 'Add', new_owned_card_path(card_id: card.id) %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,3 +19,5 @@
 <br>
 
 <%= link_to 'New Card', new_card_path %>
+
+<%= will_paginate @cards %>

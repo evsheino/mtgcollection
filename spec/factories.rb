@@ -15,7 +15,7 @@ FactoryGirl.define do
     expansions {[FactoryGirl.create(:expansion)]}
   end
 
-  factory :expansion_card do
+  factory :printing do
     card
     expansion
   end

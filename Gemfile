@@ -15,6 +15,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', :require => false
+  gem 'webmock'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :production do
@@ -59,6 +62,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+gem 'httparty'
+
+gem "rails-settings-cached", "0.3.1"
+
+gem 'bootstrap-sass-rails'
 
 # Pagination
 gem 'will_paginate', '~> 3.0'

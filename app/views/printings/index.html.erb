@@ -1,0 +1,25 @@
+<h1>Listing printings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>Expansion</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @printings.each do |printing| %>
+      <tr>
+        <td><%= link_to printing, printing %></td>
+        <td><%= link_to printing.expansion, printing.expansion %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= will_paginate @printings %>

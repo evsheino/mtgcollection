@@ -4,7 +4,7 @@ class ExpansionsController < ApplicationController
   # GET /expansions
   # GET /expansions.json
   def index
-    @expansions = Expansion.all
+    @expansions = Expansion.all.paginate(page: params[:page])
   end
 
   # GET /expansions/1

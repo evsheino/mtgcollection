@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130929220143) do
+ActiveRecord::Schema.define(version: 20131023203731) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "expansion_cards", force: true do |t|
-    t.integer  "card_id"
-    t.integer  "expansion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,9 +27,16 @@ ActiveRecord::Schema.define(version: 20130929220143) do
   end
 
   create_table "owned_cards", force: true do |t|
-    t.integer  "expansion_card_id"
+    t.integer  "printing_id"
     t.integer  "user_id"
     t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "printings", force: true do |t|
+    t.integer  "card_id"
+    t.integer  "expansion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
