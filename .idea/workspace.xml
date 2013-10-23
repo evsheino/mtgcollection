@@ -22,7 +22,7 @@
     <file path="/cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382558882476" ignored="false" />
     <file path="/users_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382562642147" ignored="false" />
     <file path="/application.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382564093888" ignored="false" />
-    <file path="/show.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382563867607" ignored="false" />
+    <file path="/show.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382568038212" ignored="false" />
     <file path="/Gemfile" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379975480280" ignored="false" />
     <file path="/new.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380563043312" ignored="false" />
     <file path="/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380559708275" ignored="false" />
@@ -70,6 +70,7 @@
     <file path="/expansions_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382559934289" ignored="false" />
     <file path="/20131023203731_rename_owned_card_expansion_card_id_to_printing_id.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382560760620" ignored="false" />
     <file path="/.travis.yml" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382561288831" ignored="false" />
+    <file path="/20130915190939_create_expansion_cards.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382568496118" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,28 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/printings/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.06882591">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile.ci" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile.ci">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
+            <state line="4" column="4" selection-start="35" selection-end="35" vertical-scroll-proportion="0.093406595">
               <folding />
             </state>
           </provider>
@@ -177,8 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/log/development.log" />
-        <option value="$PROJECT_DIR$/db/migrate/20131023192129_rename_expansion_card_to_printing.rb" />
         <option value="$PROJECT_DIR$/app/controllers/cards_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/expansions_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131023203731_rename_owned_card_expansion_card_id_to_printing_id.rb" />
@@ -193,6 +174,8 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/Gemfile.ci" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/app/views/printings/show.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130915190939_create_expansion_cards.rb" />
       </list>
     </option>
   </component>
@@ -265,6 +248,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -291,7 +306,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="printings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -715,27 +730,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.32196453">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/printings_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131023203731_rename_owned_card_expansion_card_id_to_printing_id.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="64" selection-start="152" selection-end="152" vertical-scroll-proportion="0.04509284">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="30" selection-start="62" selection-end="62" vertical-scroll-proportion="-1.3076923">
@@ -799,9 +793,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/printings/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/Gemfile.ci">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="277" selection-end="277" vertical-scroll-proportion="-9.807693">
+        <state line="8" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.18037136">
           <folding />
         </state>
       </provider>
@@ -813,16 +807,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.ci">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
+        <state line="3" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.06882591">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/app/views/printings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.06882591">
+        <state line="15" column="36" selection-start="277" selection-end="277" vertical-scroll-proportion="-9.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130915190726_create_expansions.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130915190939_create_expansion_cards.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="32" selection-start="98" selection-end="98" vertical-scroll-proportion="0.046384722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/printings/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="4" selection-start="35" selection-end="35" vertical-scroll-proportion="0.093406595">
           <folding />
         </state>
       </provider>

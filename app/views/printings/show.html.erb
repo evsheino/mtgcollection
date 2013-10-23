@@ -1,12 +1,7 @@
-<p>
-  <strong>Card:</strong>
-  <%= @printing.card_id %>
-</p>
+<h2>
+  <%= @printing %>
+</h2>
 
-<p>
-  <strong>Expansion:</strong>
-  <%= @printing.expansion_id %>
-</p>
+<br/>
 
 <%= link_to 'Edit', edit_printing_path(@printing) %> |
-<%= link_to 'Back', printings_path %>
