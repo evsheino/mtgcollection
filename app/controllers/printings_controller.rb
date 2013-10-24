@@ -32,7 +32,7 @@ class PrintingsController < ApplicationController
 
     respond_to do |format|
       if @printing.save
-        format.html { redirect_to @printing, notice: 'Expansion card was successfully created.' }
+        format.html { redirect_to @printing, notice: 'Printing was successfully created.' }
         format.json { render action: 'show', status: :created, location: @printing }
       else
         format.html { render action: 'new' }

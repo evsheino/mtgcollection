@@ -45,7 +45,7 @@ class OwnedCardsController < ApplicationController
   # PATCH/PUT /owned_cards/1.json
   def update
     respond_to do |format|
-      if @owned_card.update(owned_card_params)
+      if @owned_card.user == current_user && @owned_card.update(owned_card_params)
         format.html { redirect_to @owned_card, notice: 'Owned card was successfully updated.' }
         format.json { head :no_content }
       else
@@ -58,7 +58,10 @@ class OwnedCardsController < ApplicationController
   # DELETE /owned_cards/1
   # DELETE /owned_cards/1.json
   def destroy
-    @owned_card.destroy
+    if @owned_card.user == current_user
+      @owned_card.destroy
+    end
+
     respond_to do |format|
       format.html { redirect_to owned_cards_url }
       format.json { head :no_content }
