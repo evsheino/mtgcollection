@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20131025222206) do
 
   create_table "traded_cards", force: true do |t|
     t.integer  "trade_id"
-    t.integer  "printegering_id"
+    t.integer  "printing_id"
     t.boolean  "foil"
     t.integer  "number"
     t.datetime "created_at"

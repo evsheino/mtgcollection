@@ -11,6 +11,7 @@
 <%= form_tag('/data/add_traded_card', remote: true) do %>
   <%= text_field_tag('new-traded-card', nil, class: 'typeahead') %>
   <%= hidden_field_tag('card-id') %>
+  <%= submit_tag 'Add', class: 'btn btn-primary' %>
 <% end %>
 
 <%= link_to 'Show', @trade %> |

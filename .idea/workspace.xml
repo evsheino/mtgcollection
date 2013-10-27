@@ -25,7 +25,7 @@
     <file path="/show.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382631299186" ignored="false" />
     <file path="/Gemfile" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382568629264" ignored="false" />
     <file path="/new.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380563043312" ignored="false" />
-    <file path="/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382822515756" ignored="false" />
+    <file path="/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382910486629" ignored="false" />
     <file path="/sessions_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380562931965" ignored="false" />
     <file path="/application.css" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379353792041" ignored="false" />
     <file path="/application_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380559682416" ignored="false" />
@@ -82,7 +82,7 @@
     <file path="/trades_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382877626084" ignored="false" />
     <file path="/traded_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382801416643" ignored="false" />
     <file path="/_trade_card.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382802818459" ignored="false" />
-    <file path="/edit.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382875081483" ignored="false" />
+    <file path="/edit.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382910355359" ignored="false" />
     <file path="/trades.js.coffee" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382876183904" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +109,7 @@
       <file leaf-file-name="trades_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="24" selection-start="310" selection-end="310" vertical-scroll-proportion="0.20291777">
+            <state line="20" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.4509284">
               <folding />
             </state>
           </provider>
@@ -118,7 +118,16 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="30" selection-start="316" selection-end="316" vertical-scroll-proportion="-7.8461537">
+            <state line="11" column="56" selection-start="274" selection-end="274" vertical-scroll-proportion="-7.1923075">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="49" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -137,13 +146,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/expansions/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <marker date="1380492207382" expanded="true" signature="100:347" placeholder="..." />
-                <marker date="1380492207382" expanded="true" signature="222:336" placeholder="..." />
-                <marker date="1380492207382" expanded="true" signature="382:450" placeholder="..." />
-                <marker date="1380492207382" expanded="true" signature="472:540" placeholder="..." />
-                <marker date="1380492207382" expanded="true" signature="564:593" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,15 +171,15 @@
         <option value="$PROJECT_DIR$/app/views/trades/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/printings_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131025220816_create_traded_cards.rb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/expansions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/owned_cards/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/trades/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/trades_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/trades/edit.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -249,33 +252,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mtgcollection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mtgcollection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="expansions" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,28 +285,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mtgcollection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mtgcollection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,13 +694,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/trades/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="30" selection-start="394" selection-end="394" vertical-scroll-proportion="-9.153846">
@@ -816,29 +764,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/expansions/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1380492207382" expanded="true" signature="100:347" placeholder="..." />
-            <marker date="1380492207382" expanded="true" signature="222:336" placeholder="..." />
-            <marker date="1380492207382" expanded="true" signature="382:450" placeholder="..." />
-            <marker date="1380492207382" expanded="true" signature="472:540" placeholder="..." />
-            <marker date="1380492207382" expanded="true" signature="564:593" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/traded_cards.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="30" selection-start="316" selection-end="316" vertical-scroll-proportion="-7.8461537">
           <folding />
         </state>
       </provider>
@@ -850,9 +778,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/expansions/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="56" selection-start="274" selection-end="274" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="49" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="24" selection-start="310" selection-end="310" vertical-scroll-proportion="0.20291777">
+        <state line="20" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.4509284">
           <folding />
         </state>
       </provider>
