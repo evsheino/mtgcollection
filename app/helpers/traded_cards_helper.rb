@@ -1,0 +1,2 @@
+module TradedCardsHelper
+end

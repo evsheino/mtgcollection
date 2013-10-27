@@ -69,6 +69,6 @@ class ExpansionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expansion_params
-      params.require(:expansion).permit(:name)
+      params.require(:expansion).permit(:name, :code)
     end
 end

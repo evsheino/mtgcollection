@@ -1,0 +1,33 @@
+<h1>Listing traded_cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trade</th>
+      <th>Printing</th>
+      <th>Foil</th>
+      <th>Number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @traded_cards.each do |traded_card| %>
+      <tr>
+        <td><%= traded_card.trade_id %></td>
+        <td><%= traded_card.printing_id %></td>
+        <td><%= traded_card.foil %></td>
+        <td><%= traded_card.number %></td>
+        <td><%= link_to 'Show', traded_card %></td>
+        <td><%= link_to 'Edit', edit_traded_card_path(traded_card) %></td>
+        <td><%= link_to 'Destroy', traded_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Traded card', new_traded_card_path %>

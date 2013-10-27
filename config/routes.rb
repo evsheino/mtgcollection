@@ -1,4 +1,11 @@
 Mtgcollection::Application.routes.draw do
+  resources :payments
+
+  resources :traded_cards
+
+  resources :trades
+  get "data/trade_card_list", to: 'trades#card_list'
+
   get "places/index"
   resources :owned_cards
 

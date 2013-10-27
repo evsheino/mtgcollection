@@ -4,7 +4,14 @@ class PrintingsController < ApplicationController
   # GET /printings
   # GET /printings.json
   def index
-    @printings = Printing.search(params[:name], params[:expansion]).paginate(page: params[:page])
+
+    respond_to do |format|
+      format.html {@printings = Printing.search(params[:name], params[:expansion]).paginate(page: params[:page])}
+      format.json {
+        render json: Printing.search(params[:name], params[:expansion]).includes(:card, :expansion),
+               methods: [:card, :expansion]
+      }
+    end
   end
 
   # GET /printings/1

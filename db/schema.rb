@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023203731) do
+ActiveRecord::Schema.define(version: 20131025222206) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20131023203731) do
     t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "foil"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "trade_id"
+    t.decimal  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "printings", force: true do |t|
@@ -39,6 +47,24 @@ ActiveRecord::Schema.define(version: 20131023203731) do
     t.integer  "expansion_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "traded_cards", force: true do |t|
+    t.integer  "trade_id"
+    t.integer  "printegering_id"
+    t.boolean  "foil"
+    t.integer  "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trades", force: true do |t|
+    t.integer  "user_id"
+    t.string   "partner"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "note"
   end
 
   create_table "users", force: true do |t|

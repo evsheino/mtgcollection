@@ -1,0 +1,15 @@
+<h1>Editing trade</h1>
+
+<%= render 'form' %>
+
+<ul id="traded-card">
+  <% @trade.traded_cards.each do |card| %>
+    <%= render traded_card %>
+  <% end %>
+</ul>
+
+
+<%= text_field_tag('test', nil, class: 'typeahead') %>
+
+<%= link_to 'Show', @trade %> |
+<%= link_to 'Back', trades_path %>

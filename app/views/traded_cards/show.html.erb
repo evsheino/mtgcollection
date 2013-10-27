@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Trade:</strong>
+  <%= @traded_card.trade_id %>
+</p>
+
+<p>
+  <strong>Printing:</strong>
+  <%= @traded_card.printing_id %>
+</p>
+
+<p>
+  <strong>Foil:</strong>
+  <%= @traded_card.foil %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @traded_card.number %>
+</p>
+
+<%= link_to 'Edit', edit_traded_card_path(@traded_card) %> |
+<%= link_to 'Back', traded_cards_path %>

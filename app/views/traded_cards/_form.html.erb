@@ -1,0 +1,33 @@
+<%= form_for(@traded_card) do |f| %>
+  <% if @traded_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@traded_card.errors.count, "error") %> prohibited this traded_card from being saved:</h2>
+
+      <ul>
+      <% @traded_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trade_id %><br>
+    <%= f.text_field :trade_id %>
+  </div>
+  <div class="field">
+    <%= f.label :printing_id %><br>
+    <%= f.text_field :printing_id %>
+  </div>
+  <div class="field">
+    <%= f.label :foil %><br>
+    <%= f.check_box :foil %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
