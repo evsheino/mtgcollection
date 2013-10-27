@@ -4,7 +4,12 @@ class TradesController < ApplicationController
   def card_list
     printings = Printing.includes(:card, :expansion)
     list = printings.reduce([]) {
-        |r, e| r << {value: e.card.name, id: e.id, tokens: e.card.name.split(), expansion: e.expansion.name}
+        |r, e| r << {
+          value: e.to_s,
+          id: e.id,
+          tokens: e.card.name.split(),
+          expansion: e.expansion.name
+      }
     }
 
     respond_to do |format|
