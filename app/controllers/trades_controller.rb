@@ -18,7 +18,18 @@ class TradesController < ApplicationController
   end
 
   def add_card
-
+    @trade = Trade.find(params[:trade_id])
+    card = @trade.traded_cards.where(printing_id: params[:printing_id]).first
+    if card.nil?
+      @trade.traded_cards << TradedCard.new(printing_id: params[:printing_id], number: 1)
+    else
+      card.number += 1
+      card.save
+    end
+    @cards = @trade.traded_cards
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   # GET /trades

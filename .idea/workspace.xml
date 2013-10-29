@@ -4,7 +4,7 @@
     <list default="true" id="44e08c90-608b-4b8d-b46e-45aa3d795e30" name="Default" comment="" />
     <ignored path="mtgcollection.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382873199779" ignored="false" />
+    <file path="/Dummy.txt" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382988193099" ignored="false" />
     <file path="/expansion_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380011834972" ignored="false" />
     <file path="/_form.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382872017951" ignored="false" />
     <file path="/expansion.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379957122418" ignored="false" />
@@ -78,12 +78,14 @@
     <file path="/20131024162826_create_trades.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382739944045" ignored="false" />
     <file path="/20131025220816_create_traded_cards.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382740038466" ignored="false" />
     <file path="/trade.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382741316353" ignored="false" />
-    <file path="/traded_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382740612706" ignored="false" />
-    <file path="/trades_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382877626084" ignored="false" />
+    <file path="/traded_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383048184732" ignored="false" />
+    <file path="/trades_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383048113568" ignored="false" />
     <file path="/traded_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382801416643" ignored="false" />
     <file path="/_trade_card.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382802818459" ignored="false" />
-    <file path="/edit.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382910355359" ignored="false" />
+    <file path="/edit.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383048046551" ignored="false" />
     <file path="/trades.js.coffee" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382876183904" ignored="false" />
+    <file path="/_traded_cards.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382987913129" ignored="false" />
+    <file path="/add_card.js.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383046389998" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,10 +108,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="trades_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="trades_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.4509284">
+            <state line="23" column="24" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="traded_card.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/traded_card.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="24" selection-start="117" selection-end="117" vertical-scroll-proportion="0.1127321">
               <folding />
             </state>
           </provider>
@@ -118,7 +129,25 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="56" selection-start="274" selection-end="274" vertical-scroll-proportion="-7.1923075">
+            <state line="11" column="47" selection-start="346" selection-end="346" vertical-scroll-proportion="-7.1923075">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_card.js.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/trades/add_card.js.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="45" selection-start="74" selection-end="74" vertical-scroll-proportion="-0.65384614">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_traded_cards.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/trades/_traded_cards.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -127,7 +156,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="49" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+            <state line="12" column="21" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,16 +165,7 @@
       <file leaf-file-name="trades.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/expansions/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="12" column="16" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,10 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/traded_card.rb" />
-        <option value="$PROJECT_DIR$/app/models/trade.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/traded_cards_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/trades/_trade_card.html.erb" />
         <option value="$PROJECT_DIR$/app/views/trades/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/printings_controller.rb" />
@@ -176,10 +192,14 @@
         <option value="$PROJECT_DIR$/app/controllers/expansions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/owned_cards/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee" />
-        <option value="$PROJECT_DIR$/app/controllers/trades_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/trades/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/trades/_traded_cards.html.erb" />
+        <option value="$PROJECT_DIR$/db/schema.rb" />
+        <option value="$PROJECT_DIR$/app/views/trades/add_card.js.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee" />
+        <option value="$PROJECT_DIR$/app/views/trades/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/trades_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/traded_card.rb" />
       </list>
     </option>
   </component>
@@ -222,8 +242,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -269,6 +287,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -284,24 +306,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgcollection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ratebeer" />
     <property name="FullScreen" value="false" />
-    <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -617,7 +673,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21581769" sideWeight="0.6705128" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17828418" sideWeight="0.6705128" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -694,41 +750,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/trades/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="30" selection-start="394" selection-end="394" vertical-scroll-proportion="-9.153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="37" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/owned_cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="9" selection-start="395" selection-end="395" vertical-scroll-proportion="0.30150068">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/owned_cards/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="6" selection-start="373" selection-end="373" vertical-scroll-proportion="0.3125884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20131025220816_create_traded_cards.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="22" selection-start="149" selection-end="149" vertical-scroll-proportion="0.09018568">
@@ -738,44 +759,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="628" selection-end="628" vertical-scroll-proportion="0.5370879">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/traded_card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.02254642">
-          <folding />
-        </state>
+        <state line="23" column="23" selection-start="628" selection-end="628" vertical-scroll-proportion="0.5370879" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/expansions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="51" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.79708225">
-          <folding />
-        </state>
+        <state line="71" column="51" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.79708225" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="54" selection-start="697" selection-end="697" vertical-scroll-proportion="0.30357143">
-          <folding />
-        </state>
+        <state line="17" column="54" selection-start="697" selection-end="697" vertical-scroll-proportion="0.30357143" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/traded_cards.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/expansions/_form.html.erb">
@@ -785,23 +784,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/trades/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="274" selection-end="274" vertical-scroll-proportion="-7.1923075">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="22" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.00795756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="49" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+        <state line="12" column="21" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trades/add_card.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="45" selection-start="74" selection-end="74" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trades/_traded_cards.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="47" selection-start="346" selection-end="346" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/traded_cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="4" selection-start="422" selection-end="422" vertical-scroll-proportion="0.1127321">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.4509284">
+        <state line="23" column="24" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/traded_card.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="24" selection-start="117" selection-end="117" vertical-scroll-proportion="0.1127321">
           <folding />
         </state>
       </provider>

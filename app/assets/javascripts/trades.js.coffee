@@ -10,7 +10,7 @@ initializeTradeCardAutocomplete = ->
   })
 
 setCardId = (e, cardInfo) ->
-  $('#card-id').val(cardInfo.id)
+  $('#printing_id').val(cardInfo.id)
 
 handleAutocomplete = ->
   $("#new-traded-card").on "typeahead:autocompleted", (e, i) -> setCardId(e, i)

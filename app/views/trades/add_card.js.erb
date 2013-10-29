@@ -1,0 +1,2 @@
+$('#traded-cards').remove();
+$("<%= escape_javascript(render 'traded_cards', cards: @cards) %>").appendTo("#card-list");

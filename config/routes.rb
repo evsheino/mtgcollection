@@ -5,7 +5,7 @@ Mtgcollection::Application.routes.draw do
 
   resources :trades
   get "data/trade_card_list", to: 'trades#card_list'
-  post "data/add_traded_card", to:'trades#add_card'
+  post "data/add_traded_card" => 'trades#add_card'
 
   get "places/index"
   resources :owned_cards
