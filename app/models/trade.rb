@@ -4,6 +4,8 @@ class Trade < ActiveRecord::Base
   has_many :printings, through: :traded_cards
   has_many :cards, through: :printings
 
+  validates_presence_of :user
+
   def my_cards
     traded_cards.mine
   end

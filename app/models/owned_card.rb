@@ -4,7 +4,7 @@ class OwnedCard < ActiveRecord::Base
   has_one :card, through: :printing
   has_one :expansion, through: :printing
 
-  validates_numericality_of :number, greater_than: 0
+  validates_numericality_of :number, greater_than: 0, only_integer: true
   validates_uniqueness_of :printing_id, scope: :user_id
 
   def to_s

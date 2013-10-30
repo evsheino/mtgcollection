@@ -10,7 +10,9 @@ class TradedCard < ActiveRecord::Base
 
   validates_presence_of :trade
   validates_presence_of :printing
+  validates_numericality_of :number, only_integer: true
   validates :number, exclusion: { in: [0] }
+  validates_uniqueness_of :printing_id, scope: :trade_id
 
   def to_s
     "#{printing} #{number}"
