@@ -2,12 +2,12 @@ class TradesController < ApplicationController
   before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_card]
 
   def add_card
-    #@trade = Trade.find(params[:trade_id])
+    number = params[:mine] ? 1 : -1
     card = @trade.traded_cards.where(printing_id: params[:printing_id]).first
     if card.nil?
-      @trade.traded_cards << TradedCard.new(printing_id: params[:printing_id], number: 1)
+      @trade.traded_cards << TradedCard.new(printing_id: params[:printing_id], number: number)
     else
-      card.number += 1
+      card.number += number
       card.save
     end
 

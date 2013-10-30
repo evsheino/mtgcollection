@@ -2,15 +2,27 @@
 
 <%= render 'form' %>
 
-<div id="card-list">
-<%= render 'traded_cards', cards: @trade.traded_cards %>
+<div class="row">
+  <div class="col-md-6">
+    <div id="my-cards">
+      <h2>Mine</h2>
+      <%= render 'traded_cards', cards: @trade.my_cards %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div id="their-cards">
+      <h2>Theirs</h2>
+      <%= render 'traded_cards', cards: @trade.their_cards %>
+    </div>
+  </div>
 </div>
 
 <%= form_tag(add_card_trade_path(@trade.id), remote: true) do %>
   <%= text_field_tag('new-traded-card', nil, class: 'typeahead') %>
   <%= hidden_field_tag('printing_id') %>
   <%= hidden_field_tag('trade_id', @trade.id) %>
-  <%= submit_tag 'Add', class: 'btn btn-primary' %>
+  <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
+  <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs'%>
 <% end %>
 
 <%= link_to 'Show', @trade %> |

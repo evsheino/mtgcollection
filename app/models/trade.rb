@@ -3,4 +3,12 @@ class Trade < ActiveRecord::Base
   has_many :traded_cards
   has_many :printings, through: :traded_cards
   has_many :cards, through: :printings
+
+  def my_cards
+    traded_cards.mine
+  end
+
+  def their_cards
+    traded_cards.theirs
+  end
 end

@@ -1,2 +1,3 @@
-$('#traded-cards').remove();
-$("<%= escape_javascript(render 'traded_cards', cards: @cards) %>").appendTo("#card-list");
+$('.traded-cards').remove();
+$("<%= escape_javascript(render 'traded_cards', cards: @cards.mine) %>").appendTo("#my-cards");
+$("<%= escape_javascript(render 'traded_cards', cards: @cards.theirs) %>").appendTo("#their-cards");
