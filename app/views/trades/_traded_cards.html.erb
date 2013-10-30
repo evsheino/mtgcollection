@@ -1,5 +1,11 @@
-<ul id="traded-cards">
+<table id="traded-cards" class="table table-hover">
   <% cards.each do |card| %>
-    <li><%= card %></li>
+    <tr>
+      <td><%= card.printing %></td>
+      <td><%= card.number %></td>
+      <td><%= link_to 'Remove', delete_card_trade_path(card.id), remote: true,
+                        method: :post, class: 'btn btn-primary' %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+</table>

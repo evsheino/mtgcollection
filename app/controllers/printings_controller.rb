@@ -1,6 +1,21 @@
 class PrintingsController < ApplicationController
   before_action :set_printing, only: [:show, :edit, :update, :destroy]
 
+  def card_list
+    printings = Printing.includes(:card, :expansion)
+    list = printings.reduce([]) {
+        |r, e| r << {
+          value: e.to_s,
+          id: e.id,
+          tokens: e.card.name.split(),
+          expansion: e.expansion.name
+      }
+    }
+    respond_to do |format|
+      format.json {render json: list}
+    end
+  end
+
   # GET /printings
   # GET /printings.json
   def index

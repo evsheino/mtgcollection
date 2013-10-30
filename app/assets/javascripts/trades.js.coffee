@@ -5,16 +5,16 @@
 initializeTradeCardAutocomplete = ->
   $('#new-traded-card').typeahead({
     name: 'cards',
-    prefetch: '/data/trade_card_list.json',
+    prefetch: '/data/printing_list.json',
     limit: 10,
   })
 
-setCardId = (e, cardInfo) ->
+setCardId = (cardInfo) ->
   $('#printing_id').val(cardInfo.id)
 
 handleAutocomplete = ->
-  $("#new-traded-card").on "typeahead:autocompleted", (e, i) -> setCardId(e, i)
-  $("#new-traded-card").on "typeahead:selected", (e, i) -> setCardId(e, i)
+  $("#new-traded-card").on "typeahead:autocompleted", (e, i) -> setCardId(i)
+  $("#new-traded-card").on "typeahead:selected", (e, i) -> setCardId(i)
 
 $(document).on "page:change", ->
   initializeTradeCardAutocomplete()

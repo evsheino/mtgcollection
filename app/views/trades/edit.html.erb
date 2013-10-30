@@ -6,7 +6,7 @@
 <%= render 'traded_cards', cards: @trade.traded_cards %>
 </div>
 
-<%= form_tag('/data/add_traded_card', remote: true) do %>
+<%= form_tag(add_card_trade_path(@trade.id), remote: true) do %>
   <%= text_field_tag('new-traded-card', nil, class: 'typeahead') %>
   <%= hidden_field_tag('printing_id') %>
   <%= hidden_field_tag('trade_id', @trade.id) %>

@@ -1,24 +1,8 @@
 class TradesController < ApplicationController
-  before_action :set_trade, only: [:show, :edit, :update, :destroy]
-
-  def card_list
-    printings = Printing.includes(:card, :expansion)
-    list = printings.reduce([]) {
-        |r, e| r << {
-          value: e.to_s,
-          id: e.id,
-          tokens: e.card.name.split(),
-          expansion: e.expansion.name
-      }
-    }
-
-    respond_to do |format|
-      format.json {render json: list}
-    end
-  end
+  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_card]
 
   def add_card
-    @trade = Trade.find(params[:trade_id])
+    #@trade = Trade.find(params[:trade_id])
     card = @trade.traded_cards.where(printing_id: params[:printing_id]).first
     if card.nil?
       @trade.traded_cards << TradedCard.new(printing_id: params[:printing_id], number: 1)
@@ -26,9 +10,19 @@ class TradesController < ApplicationController
       card.number += 1
       card.save
     end
+
     @cards = @trade.traded_cards
     respond_to do |format|
-      format.js {}
+      format.js {render 'refresh_card_list'}
+    end
+  end
+
+  def delete_card
+    card = TradedCard.find(params[:id])
+    card.destroy
+    @cards = card.trade.traded_cards
+    respond_to do |format|
+      format.js {render 'refresh_card_list'}
     end
   end
 

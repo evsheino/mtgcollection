@@ -3,14 +3,16 @@ Mtgcollection::Application.routes.draw do
 
   resources :traded_cards
 
-  resources :trades
-  get "data/trade_card_list", to: 'trades#card_list'
-  post "data/add_traded_card" => 'trades#add_card'
+  resources :trades do
+    post 'add_card', on: :member
+    post 'delete_card', on: :member
+  end
 
   get "places/index"
   resources :owned_cards
 
   resources :printings
+  get 'data/printing_list', to: 'printings#card_list'
 
   resources :expansions
 
