@@ -1,8 +1,10 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_card]
 
+  # Add a card to the trade. Updates the number rather than
+  # creates a new one if the card is already in the trade.
   def add_card
-    number = params[:mine] ? 1 : -1
+    number = params[:mine] ? -1 : 1
     card = @trade.traded_cards.where(printing_id: params[:printing_id]).first
     if card.nil?
       @trade.traded_cards << TradedCard.new(printing_id: params[:printing_id], number: number)
@@ -17,6 +19,7 @@ class TradesController < ApplicationController
     end
   end
 
+  # Remove a card from the trade.
   def delete_card
     card = TradedCard.find(params[:id])
     card.destroy
