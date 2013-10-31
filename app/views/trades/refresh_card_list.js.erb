@@ -1,3 +1,3 @@
 $('.traded-cards').remove();
-$("<%= escape_javascript(render 'traded_cards', rows: @trade.my_side) %>").appendTo("#my-cards");
-$("<%= escape_javascript(render 'traded_cards', rows: @trade.their_side) %>").appendTo("#their-cards");
+$("<%= escape_javascript(render 'trades/traded_cards', rows: @trade.my_side) %>").appendTo("#my-cards");
+$("<%= escape_javascript(render 'trades/traded_cards', rows: @trade.their_side) %>").appendTo("#their-cards");

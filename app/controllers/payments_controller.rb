@@ -55,7 +55,9 @@ class PaymentsController < ApplicationController
   # DELETE /payments/1.json
   def destroy
     @payment.destroy
+    @trade = @payment.trade.decorate
     respond_to do |format|
+      format.js {render 'trades/refresh_card_list'}
       format.html { redirect_to payments_url }
       format.json { head :no_content }
     end

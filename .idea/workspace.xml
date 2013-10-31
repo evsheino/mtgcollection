@@ -25,7 +25,7 @@
     <file path="/show.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382631299186" ignored="false" />
     <file path="/Gemfile" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383138828913" ignored="false" />
     <file path="/new.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380563043312" ignored="false" />
-    <file path="/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383149367961" ignored="false" />
+    <file path="/routes.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383219338178" ignored="false" />
     <file path="/sessions_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380562931965" ignored="false" />
     <file path="/application.css" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1379353792041" ignored="false" />
     <file path="/application_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1380559682416" ignored="false" />
@@ -77,20 +77,21 @@
     <file path="/printing.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382572309276" ignored="false" />
     <file path="/20131024162826_create_trades.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382739944045" ignored="false" />
     <file path="/20131025220816_create_traded_cards.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382740038466" ignored="false" />
-    <file path="/trade.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383150072514" ignored="false" />
-    <file path="/traded_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383134063112" ignored="false" />
+    <file path="/trade.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383218647224" ignored="false" />
+    <file path="/traded_card.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383216425031" ignored="false" />
     <file path="/trades_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383155951634" ignored="false" />
-    <file path="/traded_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382801416643" ignored="false" />
+    <file path="/traded_cards_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383219494101" ignored="false" />
     <file path="/_trade_card.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382802818459" ignored="false" />
     <file path="/edit.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383149789325" ignored="false" />
     <file path="/trades.js.coffee" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1382876183904" ignored="false" />
     <file path="/_traded_cards.html.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383151431816" ignored="false" />
     <file path="/add_card.js.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383046389998" ignored="false" />
-    <file path="/refresh_card_list.js.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383145076956" ignored="false" />
+    <file path="/refresh_card_list.js.erb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383219620849" ignored="false" />
     <file path="/trade_decorator.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383150144832" ignored="false" />
-    <file path="/traded_card_decorator.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383155707013" ignored="false" />
+    <file path="/traded_card_decorator.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383218889315" ignored="false" />
     <file path="/payment.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383139684211" ignored="false" />
-    <file path="/payment_decorator.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383151675569" ignored="false" />
+    <file path="/payment_decorator.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383218910726" ignored="false" />
+    <file path="/payments_controller.rb" changelist="44e08c90-608b-4b8d-b46e-45aa3d795e30" time="1383219718389" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,43 +117,34 @@
       <file leaf-file-name="trades_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/trades/edit.html.erb">
+      <file leaf-file-name="payments_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/payments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="23" selection-start="233" selection-end="233" vertical-scroll-proportion="-7.1923075">
+            <state line="59" column="48" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="25" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trades.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="19" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="traded_cards_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="traded_cards_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/traded_cards_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="2" selection-start="450" selection-end="450" vertical-scroll-proportion="0.55661666">
+            <state line="55" column="22" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="0.18553889">
               <folding />
             </state>
           </provider>
@@ -161,7 +153,7 @@
       <file leaf-file-name="refresh_card_list.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/trades/refresh_card_list.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="51" selection-start="178" selection-end="178" vertical-scroll-proportion="-1.3076923">
+            <state line="1" column="39" selection-start="68" selection-end="68" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
@@ -179,7 +171,7 @@
       <file leaf-file-name="traded_card_decorator.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/decorators/traded_card_decorator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="30" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+            <state line="9" column="57" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -188,7 +180,7 @@
       <file leaf-file-name="payment_decorator.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/decorators/payment_decorator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="58" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+            <state line="8" column="51" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -197,7 +189,16 @@
       <file leaf-file-name="trade.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="7" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
+            <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="traded_card.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/traded_card.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,22 +217,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/trades/add_card.js.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/printings_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee" />
         <option value="$PROJECT_DIR$/app/models/owned_card.rb" />
-        <option value="$PROJECT_DIR$/app/models/traded_card.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/payment.rb" />
-        <option value="$PROJECT_DIR$/app/views/trades/refresh_card_list.js.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/trades/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/decorators/trade_decorator.rb" />
-        <option value="$PROJECT_DIR$/app/models/trade.rb" />
         <option value="$PROJECT_DIR$/app/views/trades/_traded_cards.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/traded_card.rb" />
+        <option value="$PROJECT_DIR$/app/models/trade.rb" />
         <option value="$PROJECT_DIR$/app/decorators/payment_decorator.rb" />
         <option value="$PROJECT_DIR$/app/decorators/traded_card_decorator.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/traded_cards_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/trades/refresh_card_list.js.erb" />
         <option value="$PROJECT_DIR$/app/controllers/trades_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/payments_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -302,11 +303,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,10 +322,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trades" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -415,28 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mtgcollection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mtgcollection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -848,27 +819,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="2" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.420191">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131025221807_create_payments.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/traded_card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/printings_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -890,34 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="25" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trades/_traded_cards.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="31" selection-start="140" selection-end="140" vertical-scroll-proportion="-2.6153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/decorators/payment_decorator.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="58" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="7" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/trades.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="19" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
@@ -932,30 +854,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/decorators/traded_card_decorator.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/traded_cards.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trades/refresh_card_list.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/traded_card.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="51" selection-start="178" selection-end="178" vertical-scroll-proportion="-1.3076923">
+        <state line="15" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+        <state line="23" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trades/_traded_cards.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="31" selection-start="140" selection-end="140" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/decorators/payment_decorator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="51" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/traded_cards_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="2" selection-start="450" selection-end="450" vertical-scroll-proportion="0.55661666">
+        <state line="55" column="22" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/decorators/traded_card_decorator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="57" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trades/refresh_card_list.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="39" selection-start="68" selection-end="68" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/trades_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/payments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="48" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="0.18553889">
           <folding />
         </state>
       </provider>

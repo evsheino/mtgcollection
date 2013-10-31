@@ -56,7 +56,9 @@ class TradedCardsController < ApplicationController
   # DELETE /traded_cards/1.json
   def destroy
     @traded_card.destroy
+    @trade = @traded_card.trade.decorate
     respond_to do |format|
+      format.js {render 'trades/refresh_card_list'}
       format.html { redirect_to traded_cards_url }
       format.json { head :no_content }
     end

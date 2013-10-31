@@ -12,30 +12,11 @@ class TradesController < ApplicationController
     end
   end
 
-  # Remove a card from the trade.
-  def delete_card
-    card = TradedCard.find(params[:id])
-    card.destroy
-    @trade = card.trade.decorate
-    respond_to do |format|
-      format.js {render 'refresh_card_list'}
-    end
-  end
-
   # Add a payment to the trade.
   def add_payment
     amount = params[:mine] ? -params[:amount].to_f : params[:amount].to_f
     @trade.add_payment(amount)
     @trade = @trade.decorate
-    respond_to do |format|
-      format.js {render 'refresh_card_list'}
-    end
-  end
-
-  def delete_payment
-    payment = Payment.find(params[:id])
-    payment.destroy
-    @trade = payment.trade.decorate
     respond_to do |format|
       format.js {render 'refresh_card_list'}
     end

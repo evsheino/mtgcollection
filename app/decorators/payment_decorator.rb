@@ -6,7 +6,7 @@ class PaymentDecorator < Draper::Decorator
   end
 
   def delete_link
-    h.raw(h.link_to 'Remove', h.delete_payment_trade_path(id), remote: true,
+    h.raw(h.link_to 'Remove', h.payment_path(object.id), remote: true,
                 method: :delete, class: 'btn btn-primary')
   end
 
