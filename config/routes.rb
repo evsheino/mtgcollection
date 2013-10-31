@@ -5,7 +5,9 @@ Mtgcollection::Application.routes.draw do
 
   resources :trades do
     post 'add_card', on: :member
-    post 'delete_card', on: :member
+    delete 'delete_card', on: :member
+    post 'add_payment', on: :member
+    delete 'delete_payment', on: :member
   end
 
   get "places/index"

@@ -1,12 +1,9 @@
 <table class="traded-cards table table-hover">
-  <% cards.each do |card| %>
+  <% rows.each do |row| %>
     <tr>
-      <td><%= card.printing %></td>
-      <%#	A presenter would be preferable so that this view wouldn't need to know to use abs. %>
-      <td><%= card.number.abs %></td>
-      <td><%= link_to 'Remove', delete_card_trade_path(card.id), remote: true,
-                        method: :post, class: 'btn btn-primary' %>
-      </td>
+      <td><%= row %></td>
+      <td><%= row.amount %></td>
+      <td><%= row.delete_link %></td>
     </tr>
   <% end %>
 </table>

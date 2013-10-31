@@ -1,19 +1,12 @@
 class TradesController < ApplicationController
-  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_card]
+  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_card, :add_payment]
 
-  # Add a card to the trade. Updates the number rather than
-  # creates a new one if the card is already in the trade.
+  # Add a card to the trade.
   def add_card
     number = params[:mine] ? -1 : 1
-    card = @trade.traded_cards.where(printing_id: params[:printing_id]).first
-    if card.nil?
-      @trade.traded_cards << TradedCard.new(printing_id: params[:printing_id], number: number)
-    else
-      card.number += number
-      card.save
-    end
+    @trade.add_card(params[:printing_id], number)
 
-    @cards = @trade.traded_cards
+    @trade = @trade.decorate
     respond_to do |format|
       format.js {render 'refresh_card_list'}
     end
@@ -23,7 +16,26 @@ class TradesController < ApplicationController
   def delete_card
     card = TradedCard.find(params[:id])
     card.destroy
-    @cards = card.trade.traded_cards
+    @trade = card.trade.decorate
+    respond_to do |format|
+      format.js {render 'refresh_card_list'}
+    end
+  end
+
+  # Add a payment to the trade.
+  def add_payment
+    amount = params[:mine] ? -params[:amount].to_f : params[:amount].to_f
+    @trade.add_payment(amount)
+    @trade = @trade.decorate
+    respond_to do |format|
+      format.js {render 'refresh_card_list'}
+    end
+  end
+
+  def delete_payment
+    payment = Payment.find(params[:id])
+    payment.destroy
+    @trade = payment.trade.decorate
     respond_to do |format|
       format.js {render 'refresh_card_list'}
     end
@@ -47,6 +59,7 @@ class TradesController < ApplicationController
 
   # GET /trades/1/edit
   def edit
+    @trade = @trade.decorate
   end
 
   # POST /trades
