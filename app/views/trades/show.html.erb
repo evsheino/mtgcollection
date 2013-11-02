@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @trade.user_id %>
+  <%= @trade.user %>
 </p>
 
 <p>
@@ -14,6 +14,26 @@
   <strong>Date:</strong>
   <%= @trade.date %>
 </p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @trade.note %>
+</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <div id="my-cards">
+      <h2>Mine</h2>
+      <%= render 'show_traded_cards', rows: @trade.my_side %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div id="their-cards">
+      <h2>Theirs</h2>
+      <%= render 'show_traded_cards', rows: @trade.their_side %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_trade_path(@trade) %> |
 <%= link_to 'Back', trades_path %>

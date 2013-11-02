@@ -31,6 +31,7 @@ class TradesController < ApplicationController
   # GET /trades/1
   # GET /trades/1.json
   def show
+    @trade = @trade.decorate
   end
 
   # GET /trades/new
