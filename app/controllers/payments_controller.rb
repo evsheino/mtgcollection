@@ -57,7 +57,7 @@ class PaymentsController < ApplicationController
     @payment.destroy
     @trade = @payment.trade.decorate
     respond_to do |format|
-      format.js {render 'trades/refresh_card_list'}
+      format.js { render 'trades/refresh_card_list' }
       format.html { redirect_to payments_url }
       format.json { head :no_content }
     end

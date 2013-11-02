@@ -17,19 +17,56 @@
   </div>
 </div>
 
-<%= form_tag(add_card_trade_path(@trade.id), remote: true) do %>
-  <%= text_field_tag('new-traded-card', nil, class: 'typeahead') %>
-  <%= hidden_field_tag('printing_id') %>
-  <%= hidden_field_tag('trade_id', @trade.id) %>
-  <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
-  <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs'%>
-<% end %>
-
-<%= form_tag(add_payment_trade_path(@trade.id), remote: true) do %>
-  <%= number_field_tag('amount') %>
-    <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
-    <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs' %>
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Add Cards</h3>
+  <%= form_tag(add_card_trade_path(@trade.id), class: 'form-inline', remote: true) do %>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <%= label_tag('new-traded-card', 'Card', class: 'sr-only') %>
+          <%= text_field_tag('new-traded-card', nil, class: 'typeahead form-control', placeholder: 'Add Card') %>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="checkbox">
+          <label>
+          <%= check_box_tag('foil') %> Foil
+          </label>
+        </div>
+        <%= hidden_field_tag('printing_id') %>
+        <%= hidden_field_tag('trade_id', @trade.id) %>
+      </div>
+      <div class="col-xs-2">
+        <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
+      </div>
+      <div class="col-xs-2">
+        <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs'%>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Add Money</h3>
+    <%= form_tag(add_payment_trade_path(@trade.id), class: 'form-inline', remote: true) do %>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <%= number_field_tag('amount', placeholder: 'Add Money') %>
+          </div>
+        </div>
+        <div class="col-sm-offset-2 col-xs-2">
+          <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
+        </div>
+        <div class="col-xs-2">
+          <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Show', @trade %> |
 <%= link_to 'Back', trades_path %>
