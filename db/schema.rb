@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025222206) do
+ActiveRecord::Schema.define(version: 20131104131008) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 20131025222206) do
     t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "foil"
+    t.boolean  "foil",        default: false, null: false
+    t.boolean  "altered",     default: false, null: false
+    t.boolean  "signed",      default: false, null: false
   end
 
   create_table "payments", force: true do |t|
@@ -52,10 +54,12 @@ ActiveRecord::Schema.define(version: 20131025222206) do
   create_table "traded_cards", force: true do |t|
     t.integer  "trade_id"
     t.integer  "printing_id"
-    t.boolean  "foil"
+    t.boolean  "foil",        default: false, null: false
     t.integer  "number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "signed",      default: false, null: false
+    t.boolean  "altered",     default: false, null: false
   end
 
   create_table "trades", force: true do |t|
@@ -65,6 +69,7 @@ ActiveRecord::Schema.define(version: 20131025222206) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "note"
+    t.boolean  "closed",     default: false, null: false
   end
 
   create_table "users", force: true do |t|

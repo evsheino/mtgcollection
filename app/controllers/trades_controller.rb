@@ -1,16 +1,5 @@
 class TradesController < ApplicationController
-  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_card, :add_payment]
-
-  # Add a card to the trade.
-  def add_card
-    number = params[:mine] ? -1 : 1
-    @trade.add_card(params[:printing_id], number)
-
-    @trade = @trade.decorate
-    respond_to do |format|
-      format.js {render 'refresh_card_list'}
-    end
-  end
+  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment]
 
   # Add a payment to the trade.
   def add_payment
@@ -42,6 +31,7 @@ class TradesController < ApplicationController
   # GET /trades/1/edit
   def edit
     @trade = @trade.decorate
+    @new_card = TradedCard.new
   end
 
   # POST /trades

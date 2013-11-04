@@ -38,6 +38,25 @@ class TradedCardsController < ApplicationController
     end
   end
 
+  # Create a new record unless the same printing exists in the related trade, in which case update the
+  # number of the existing record.
+  def create_or_update
+    @traded_card = TradedCard.initialize_or_update(traded_card_params)
+    @trade = @traded_card.trade.decorate
+
+    respond_to do |format|
+      if @traded_card.save
+        format.html { redirect_to @traded_card, notice: 'Traded card was successfully created.' }
+        format.js { render 'trades/refresh_card_list' }
+        format.json { render json: @traded_card, status: :created, location: @traded_card }
+      else
+        format.html { render action: 'new' }
+        format.js { render 'trades/refresh_card_list' }
+        format.json { render json: @traded_card.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # PATCH/PUT /traded_cards/1
   # PATCH/PUT /traded_cards/1.json
   def update
@@ -72,6 +91,6 @@ class TradedCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def traded_card_params
-      params.require(:traded_card).permit(:trade_id, :printing_id, :foil, :number)
+      params.require(:traded_card).permit(:trade_id, :printing_id, :foil, :signed, :altered, :number)
     end
 end

@@ -20,7 +20,7 @@
 <div class="row">
   <div class="col-md-6">
     <h3>Add Cards</h3>
-  <%= form_tag(add_card_trade_path(@trade.id), class: 'form-inline', remote: true) do %>
+  <%= form_tag(create_or_update_traded_cards_path, class: 'form-inline', remote: true) do %>
     <div class="row">
       <div class="col-xs-6">
         <div class="form-group">
@@ -31,17 +31,18 @@
       <div class="col-xs-2">
         <div class="checkbox">
           <label>
-          <%= check_box_tag('foil') %> Foil
+          <%= check_box_tag('traded_card[foil]') %> Foil
           </label>
         </div>
-        <%= hidden_field_tag('printing_id') %>
-        <%= hidden_field_tag('trade_id', @trade.id) %>
+        <%= hidden_field_tag('traded_card[printing_id]') %>
+        <%= hidden_field_tag('traded_card[trade_id]', @trade.id) %>
+        <%= hidden_field_tag('traded_card[number]') %>
       </div>
       <div class="col-xs-2">
-        <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
+        <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card' %>
       </div>
       <div class="col-xs-2">
-        <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs'%>
+        <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card' %>
       </div>
     </div>
   <% end %>

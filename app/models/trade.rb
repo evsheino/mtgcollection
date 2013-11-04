@@ -15,7 +15,7 @@ class Trade < ActiveRecord::Base
     traded_cards.theirs
   end
 
-  def add_card(printing_id, number)
+  def add_card(card)
     card = traded_cards.find_or_initialize_by(printing_id: printing_id) do |c|
       c.number = 0
     end

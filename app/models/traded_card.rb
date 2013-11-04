@@ -12,7 +12,17 @@ class TradedCard < ActiveRecord::Base
   validates_presence_of :printing
   validates_numericality_of :number, only_integer: true
   validates :number, exclusion: { in: [0] }
-  validates_uniqueness_of :printing_id, scope: :trade_id
+  validates_uniqueness_of :printing_id, scope: [:trade_id, :foil]
+
+  def self.initialize_or_update(attributes)
+    number = attributes[:number].to_i
+    card = find_or_initialize_by(attributes.except(:number)) do |c|
+      c.number = 0
+    end
+    card.number += number
+    puts "-----> #{card.number}"
+    card
+  end
 
   def to_s
     "#{printing} #{number}"
