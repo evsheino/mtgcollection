@@ -20,7 +20,6 @@ class TradedCard < ActiveRecord::Base
       c.number = 0
     end
     card.number += number
-    puts "-----> #{card.number}"
     card
   end
 

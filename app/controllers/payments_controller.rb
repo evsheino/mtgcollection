@@ -51,6 +51,26 @@ class PaymentsController < ApplicationController
     end
   end
 
+  def create_or_update
+    p = payment_params
+    p[:amount] = -p[:amount].to_f if params[:mine]
+
+    @payment = Payment.initialize_or_update(p)
+    @trade = @payment.trade.decorate
+
+    respond_to do |format|
+      if @payment.save
+        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
+        format.js { render 'trades/refresh_card_list' }
+        format.json { render json: @payment, status: :created, location: @payment }
+      else
+        format.html { render action: 'new' }
+        format.js { render 'trades/refresh_card_list' }
+        format.json { render json: @payment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # DELETE /payments/1
   # DELETE /payments/1.json
   def destroy

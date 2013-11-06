@@ -1,6 +1,10 @@
 <h1>Editing trade</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'form' %>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-6">
@@ -20,58 +24,57 @@
 <div class="row">
   <div class="col-md-12">
     <h3>Add Cards</h3>
-  <%= form_tag(create_or_update_traded_cards_path, class: 'form-inline', remote: true) do %>
-    <div class="row">
-      <div class="col-xs-4">
-        <div class="form-group">
-          <%= label_tag('new-traded-card', 'Card', class: 'sr-only') %>
-          <%= text_field_tag('new-traded-card', nil, class: 'typeahead form-control', placeholder: 'Card Name') %>
+    <%= form_tag(create_or_update_traded_cards_path, class: 'form-inline', remote: true) do %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= label_tag('new-traded-card', 'Card', class: 'sr-only') %>
+            <%= text_field_tag('new-traded-card', nil, class: 'typeahead form-control', placeholder: 'Card Name') %>
+          </div>
+          <div class="checkbox">
+            <label>
+              <%= check_box_tag('traded_card[foil]') %> Foil
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <%= check_box_tag('traded_card[signed]') %> Signed
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <%= check_box_tag('traded_card[altered]') %> Altered
+            </label>
+          </div>
+          <%= hidden_field_tag('traded_card[printing_id]') %>
+          <%= hidden_field_tag('traded_card[trade_id]', @trade.id) %>
+          <%= hidden_field_tag('traded_card[number]') %>
         </div>
-        <%= hidden_field_tag('traded_card[printing_id]') %>
-        <%= hidden_field_tag('traded_card[trade_id]', @trade.id) %>
-        <%= hidden_field_tag('traded_card[number]') %>
       </div>
-      <div class="col-xs-4">
-        <div class="checkbox">
-          <label>
-          <%= check_box_tag('traded_card[foil]') %> Foil
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <%= check_box_tag('traded_card[signed]') %> Signed
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <%= check_box_tag('traded_card[altered]') %> Altered
-          </label>
+      <div class="row">
+        <div class="col-md-12">
+          <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card' %>
+          <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card' %>
         </div>
       </div>
-      <div class="col-xs-2">
-        <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card' %>
-      </div>
-      <div class="col-xs-2">
-        <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card' %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <h3>Add Money</h3>
-    <%= form_tag(add_payment_trade_path(@trade.id), class: 'form-inline', remote: true) do %>
+    <%= form_tag(create_or_update_payments_path, class: 'form-inline', remote: true) do %>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-md-12">
           <div class="form-group">
-            <%= number_field_tag('amount', placeholder: 'Amount') %>
+            <%= number_field_tag('payment[amount]', placeholder: 'Amount') %>
           </div>
         </div>
-        <div class="col-sm-offset-2 col-xs-2">
+      </div>
+      <%= hidden_field_tag('payment[trade_id]', @trade.id) %>
+      <div class="row">
+        <div class="col-md-12">
           <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine' %>
-        </div>
-        <div class="col-xs-2">
           <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs' %>
         </div>
       </div>
@@ -79,5 +82,9 @@
   </div>
 </div>
 
-<%= link_to 'Show', @trade %> |
-<%= link_to 'Back', trades_path %>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to 'Show', @trade %> |
+    <%= link_to 'Back', trades_path %>
+  </div>
+</div>

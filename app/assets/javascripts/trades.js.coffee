@@ -16,19 +16,10 @@ handleAutocomplete = ->
   $("#new-traded-card").on "typeahead:autocompleted", (e, i) -> setCardId(i)
   $("#new-traded-card").on "typeahead:selected", (e, i) -> setCardId(i)
 
-setCardNumber = (number) ->
-  $('#traded_card_number').val(number)
-
-addCardSubmitButtonEvent = ->
-  $('#add-my-card').on 'click', (e, i) -> setCardNumber(-1)
-  $('#add-their-card').on 'click', (e, i) -> setCardNumber(1)
-
 $(document).on "page:change", ->
   initializeTradeCardAutocomplete()
   handleAutocomplete()
-  addCardSubmitButtonEvent()
 
 $ ->
   initializeTradeCardAutocomplete()
   handleAutocomplete()
-  addCardSubmitButtonEvent()

@@ -1,5 +1,8 @@
 Mtgcollection::Application.routes.draw do
-  resources :payments
+
+  resources :payments do
+    post 'create_or_update', on: :collection
+  end
 
   resources :traded_cards do
     post 'create_or_update', on: :collection

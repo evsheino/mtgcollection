@@ -41,6 +41,9 @@ class TradedCardsController < ApplicationController
   # Create a new record unless the same printing exists in the related trade, in which case update the
   # number of the existing record.
   def create_or_update
+    p = traded_card_params
+    p[:number] = -p[:number].to_i if params[:mine]
+
     @traded_card = TradedCard.initialize_or_update(traded_card_params)
     @trade = @traded_card.trade.decorate
 
