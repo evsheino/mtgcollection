@@ -55,7 +55,7 @@ class PaymentsController < ApplicationController
     p = payment_params
     p[:amount] = -p[:amount].to_f if params[:mine]
 
-    @payment = Payment.initialize_or_update(p)
+    @payment = Payment.increment_amount_or_initialize(p)
     @trade = @payment.trade.decorate
 
     respond_to do |format|

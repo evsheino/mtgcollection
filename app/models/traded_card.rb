@@ -17,7 +17,7 @@ class TradedCard < ActiveRecord::Base
   validates_uniqueness_of :printing_id, scope: [:trade_id, :foil, :signed, :altered]
 
   # Find the record with the attributes given (excluding number) or initialize a new one if not found.
-  # Then increment the number with the number in the givcen attributes and return the record (without saving).
+  # Then increment the number with the number in the given attributes and return the record (without saving).
   def self.increment_number_or_initialize(attributes)
     number = attributes[:number].to_i
     attrs = type_cast_attributes(attributes.except(:number))

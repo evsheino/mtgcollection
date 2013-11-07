@@ -19,4 +19,15 @@ FactoryGirl.define do
     card
     expansion
   end
+
+  factory :trade do
+    user
+    partner 'gg'
+    date Date.new(2013, 1, 1)
+  end
+
+  factory :payment do
+    trade
+    amount -10
+  end
 end
