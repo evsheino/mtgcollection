@@ -1,5 +1,7 @@
 # Represents a card that is involved in a trade.
 class TradedCard < ActiveRecord::Base
+  extend FormValueTypeCaster
+
   belongs_to :trade
   belongs_to :printing
 
@@ -12,11 +14,14 @@ class TradedCard < ActiveRecord::Base
   validates_presence_of :printing
   validates_numericality_of :number, only_integer: true
   validates :number, exclusion: { in: [0] }
-  validates_uniqueness_of :printing_id, scope: [:trade_id, :foil]
+  validates_uniqueness_of :printing_id, scope: [:trade_id, :foil, :signed, :altered]
 
-  def self.initialize_or_update(attributes)
+  # Find the record with the attributes given (excluding number) or initialize a new one if not found.
+  # Then increment the number with the number in the givcen attributes and return the record (without saving).
+  def self.increment_number_or_initialize(attributes)
     number = attributes[:number].to_i
-    card = find_or_initialize_by(attributes.except(:number)) do |c|
+    attrs = type_cast_attributes(attributes.except(:number))
+    card = find_or_initialize_by(attrs) do |c|
       c.number = 0
     end
     card.number += number

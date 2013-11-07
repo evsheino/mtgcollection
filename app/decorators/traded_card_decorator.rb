@@ -13,8 +13,8 @@ class TradedCardDecorator < Draper::Decorator
   def to_s
     s = object.printing.to_s
     s += " signed" if object.signed
-    s += " foil" if object.foil
     s += " altered" if object.altered
+    s += " foil" if object.foil
     s
   end
 

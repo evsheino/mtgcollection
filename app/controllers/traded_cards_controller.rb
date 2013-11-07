@@ -44,7 +44,7 @@ class TradedCardsController < ApplicationController
     p = traded_card_params
     p[:number] = -p[:number].to_i if params[:mine]
 
-    @traded_card = TradedCard.initialize_or_update(traded_card_params)
+    @traded_card = TradedCard.increment_number_or_initialize(p)
     @trade = @traded_card.trade.decorate
 
     respond_to do |format|

@@ -24,7 +24,8 @@
 <div class="row">
   <div class="col-md-12">
     <h3>Add Cards</h3>
-    <%= form_tag(create_or_update_traded_cards_path, class: 'form-inline', remote: true) do %>
+    <%= form_for(@new_card, url: { controller: 'traded_cards', action: 'create_or_update' },
+                 class: 'form-inline', remote: true) do |f| %>
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
@@ -33,28 +34,28 @@
           </div>
           <div class="checkbox">
             <label>
-              <%= check_box_tag('traded_card[foil]') %> Foil
+              <%= f.check_box(:foil) %> Foil
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <%= check_box_tag('traded_card[signed]') %> Signed
+              <%= f.check_box(:signed) %> Signed
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <%= check_box_tag('traded_card[altered]') %> Altered
+              <%= f.check_box(:altered) %> Altered
             </label>
           </div>
-          <%= hidden_field_tag('traded_card[printing_id]') %>
-          <%= hidden_field_tag('traded_card[trade_id]', @trade.id) %>
-          <%= hidden_field_tag('traded_card[number]') %>
+          <%= f.hidden_field(:printing_id) %>
+          <%= f.hidden_field(:trade_id, value: @trade.id) %>
+          <%= f.hidden_field(:number, value: 1) %>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <%= submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card' %>
-          <%= submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card' %>
+          <%= f.submit('Add Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card') %>
+          <%= f.submit('Add Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card') %>
         </div>
       </div>
     <% end %>
