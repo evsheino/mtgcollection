@@ -1,18 +1,19 @@
 FactoryGirl.define do
+
   factory :user do
-    username "Pekka"
+    sequence(:username) { |n| "user#{n}" }
     password "foobar1"
     password_confirmation "foobar1"
   end
 
   factory :expansion do
-    name 'Alpha'
-    code 'LEA'
+    sequence(:name) { |n| "expansion#{n}" }
+    sequence(:code) { |n| "#{n}".ljust(3, 'x')[0..2] }
   end
 
   factory :card do
-    name 'Grey Ogre'
-    expansions {[FactoryGirl.create(:expansion)]}
+    sequence(:name) { |n| "card#{n}" }
+    expansions { [FactoryGirl.create(:expansion)] }
   end
 
   factory :printing do
