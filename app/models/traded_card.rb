@@ -28,6 +28,17 @@ class TradedCard < ActiveRecord::Base
     card
   end
 
+  # Find a card owned by the trade's user that has the same attributes (except some) as this
+  # if one exists. Otherwise return a new owned card (with number = 0).
+  def to_corresponding_owned_card
+    excluded_attrs = ['id', 'created_at', 'updated_at', 'trade_id', 'number']
+    puts "----> #{attributes.except(*excluded_attrs)}"
+
+    trade.user.owned_cards.find_or_initialize_by(attributes.except(*excluded_attrs)) do |card|
+      card.number = 0
+    end
+  end
+
   def to_s
     "#{printing} #{number}"
   end

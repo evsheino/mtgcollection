@@ -5,7 +5,7 @@ class OwnedCard < ActiveRecord::Base
   has_one :expansion, through: :printing
 
   validates_numericality_of :number, greater_than: 0, only_integer: true
-  validates_uniqueness_of :printing_id, scope: :user_id
+  validates_uniqueness_of :printing_id, scope: [:user_id, :foil, :signed, :altered]
 
   def to_s
     "#{card}, owned by #{user}"

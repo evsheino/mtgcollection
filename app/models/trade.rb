@@ -15,6 +15,7 @@ class Trade < ActiveRecord::Base
     traded_cards.theirs
   end
 
+  # Adds a new payment or updates the existing one.
   def add_payment(amount)
     payment = payments.first
     if payment.nil?
@@ -24,4 +25,22 @@ class Trade < ActiveRecord::Base
       payment.save
     end
   end
+
+  # Remove cards traded away in the trade from the user's collection and add cards received in the trade.
+  # Cards traded away which are not found in the user's collection are ignored.
+  def update_user_collection
+    traded_cards.includes(:trade).each do |traded_card|
+      owned_card = traded_card.to_corresponding_owned_card
+      puts traded_card.attributes
+      puts owned_card.attributes
+
+      owned_card.number += traded_card.number
+      if owned_card.number < 1
+        owned_card.destroy if owned_card.persisted?
+      else
+        owned_card.save
+      end
+    end
+  end
+
 end
