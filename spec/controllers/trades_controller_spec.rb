@@ -59,9 +59,9 @@ describe TradesController do
         assigns(:trade).should be_persisted
       end
 
-      it "redirects to the created trade" do
+      it "redirects to the edit page of the created trade" do
         post :create, {:trade => valid_attributes}, valid_session
-        response.should redirect_to(Trade.last)
+        response.should redirect_to(edit_trade_path(Trade.last))
       end
     end
 

@@ -25,7 +25,7 @@ class TradesController < ApplicationController
 
   # GET /trades/new
   def new
-    @trade = Trade.new
+    @trade = Trade.new(user: current_user)
   end
 
   # GET /trades/1/edit
@@ -41,7 +41,7 @@ class TradesController < ApplicationController
 
     respond_to do |format|
       if @trade.save
-        format.html { redirect_to @trade, notice: 'Trade was successfully created.' }
+        format.html { redirect_to edit_trade_path(@trade), notice: 'Trade was successfully created.' }
         format.json { render action: 'show', status: :created, location: @trade }
       else
         format.html { render action: 'new' }

@@ -4,7 +4,7 @@ class OwnedCardsController < ApplicationController
   # GET /owned_cards
   # GET /owned_cards.json
   def index
-    @owned_cards = OwnedCard.paginate(page: params[:page])
+    @owned_cards = OwnedCard.paginate(page: params[:page]).decorate
   end
 
   # GET /owned_cards/1

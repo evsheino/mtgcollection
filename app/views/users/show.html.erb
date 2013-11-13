@@ -13,11 +13,14 @@
   </thead>
 
   <tbody>
-  <% @user.owned_cards.each do |owned_card| %>
+  <% @owned_cards.each do |owned_card| %>
     <tr>
       <td><%= link_to owned_card.card, printing_path(owned_card.printing) %></td>
       <td><%=	link_to owned_card.expansion, owned_card.expansion %></td>
       <td><%= owned_card.number %></td>
+      <td><%= owned_card.foil %></td>
+      <td><%= owned_card.altered %></td>
+      <td><%= owned_card.signed %></td>
       <% if @user == current_user %>
         <td><%= link_to 'Edit', edit_owned_card_path(owned_card) %></td>
         <td><%= link_to 'Destroy', owned_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>

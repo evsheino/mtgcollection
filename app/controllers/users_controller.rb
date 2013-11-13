@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @owned_card = @user.owned_cards.paginate(page: params[:page])
+    @owned_cards = @user.owned_cards.paginate(page: params[:page]).decorate
   end
 
   # GET /users/new
