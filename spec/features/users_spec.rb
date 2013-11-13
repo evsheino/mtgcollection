@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "User" do
   include BrowserTestHelper
 
-  let!(:user) { FactoryGirl.create :user }
+  let!(:user) { FactoryGirl.create :user, username: 'Pekka' }
 
   it "is added to the system after signing up with good credentials" do
     visit signup_path
@@ -34,13 +34,12 @@ describe "User" do
     it "has his/her cards listed on his/her page" do
       sign_in 'Pekka', 'foobar1'
 
-      card = FactoryGirl.create(:card)
+      card = FactoryGirl.create(:card, name: 'Grey Ogre')
       OwnedCard.create(user: user, printing: card.printings.first, number: 1)
 
       visit user_path(user)
 
       expect(page).to have_content 'Grey Ogre'
-      expect(page).to have_content 'Alpha'
       expect(page).to have_content '1'
     end
   end

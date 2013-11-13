@@ -2,10 +2,11 @@ require 'spec_helper'
 
 describe "trades/edit" do
   before(:each) do
-    @trade = assign(:trade, stub_model(Trade,
-      :user_id => "",
-      :partner => "MyString"
-    ))
+    @trade = assign(:trade, TradeDecorator.new(stub_model(Trade,
+        user_id: 1,
+        partner: "Partner"
+     )))
+    @new_card = assign(:new_card, stub_model(TradedCard))
   end
 
   it "renders the edit trade form" do

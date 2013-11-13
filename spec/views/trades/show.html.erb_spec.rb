@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe "trades/show" do
   before(:each) do
-    @trade = assign(:trade, stub_model(Trade,
-      :user_id => "",
-      :partner => "Partner"
-    ))
+    @trade = assign(:trade, TradeDecorator.new(stub_model(Trade,
+      user_id: 1,
+      partner: "Partner"
+    )))
   end
 
   it "renders attributes in <p>" do

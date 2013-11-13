@@ -1,21 +1,21 @@
 require 'spec_helper'
 
 describe "trades/index" do
+  let(:user) {
+    stub_model(User,
+      user_id: 1,
+      username: 'Tester'
+    )
+  }
   before(:each) do
-    assign(:users, [
-      stub_model(User,
-        user_id: 1,
-        username: 'Tester'
-      )
-    ])
     assign(:trades, [
       stub_model(Trade,
-        :user_id => 1,
-        :partner => "TestPartner"
+        :partner => "TestPartner",
+        :user => user
       ),
       stub_model(Trade,
-        :user_id => 1,
-        :partner => "TestPartner"
+        :partner => "TestPartner",
+        :user => user
       )
     ])
   end
