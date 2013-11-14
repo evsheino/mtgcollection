@@ -26,13 +26,18 @@ class Trade < ActiveRecord::Base
     end
   end
 
+  def execute
+    return false if closed
+    update_user_collection
+    self.closed = true
+    save
+  end
+
   # Remove cards traded away in the trade from the user's collection and add cards received in the trade.
   # Cards traded away which are not found in the user's collection are ignored.
   def update_user_collection
     traded_cards.includes(:trade).each do |traded_card|
       owned_card = traded_card.to_corresponding_owned_card
-      puts traded_card.attributes
-      puts owned_card.attributes
 
       owned_card.number += traded_card.number
       if owned_card.number < 1

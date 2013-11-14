@@ -11,6 +11,7 @@ Mtgcollection::Application.routes.draw do
   resources :trades do
     post 'add_card', on: :member
     post 'add_payment', on: :member
+    post 'execute', on: :member
     get 'edit_details', on: :member
   end
 

@@ -1,5 +1,5 @@
 class TradesController < ApplicationController
-  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment, :edit_details]
+  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment, :edit_details, :execute]
 
   # Add a payment to the trade.
   def add_payment
@@ -36,6 +36,16 @@ class TradesController < ApplicationController
 
   def edit_details
     @trade = @trade.decorate
+  end
+
+  def execute
+    respond_to do |format|
+      if @trade.execute
+        format.html { redirect_to edit_trade_path(@trade), notice: 'Trade was successfully executed.' }
+      else
+        format.html { redirect_to edit_trade_path(@trade), alert: 'Could not execute trade' }
+      end
+    end
   end
 
   # POST /trades
