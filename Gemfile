@@ -74,3 +74,5 @@ gem 'will_paginate', '~> 3.0'
 gem 'draper', '~> 1.3'
 
 gem 'bootstrap-datepicker-rails'
+
+gem 'haml'

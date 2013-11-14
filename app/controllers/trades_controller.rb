@@ -1,5 +1,5 @@
 class TradesController < ApplicationController
-  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment]
+  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment, :edit_details]
 
   # Add a payment to the trade.
   def add_payment
@@ -32,6 +32,10 @@ class TradesController < ApplicationController
   def edit
     @trade = @trade.decorate
     @new_card = TradedCard.new
+  end
+
+  def edit_details
+    @trade = @trade.decorate
   end
 
   # POST /trades

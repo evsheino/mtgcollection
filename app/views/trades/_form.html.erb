@@ -4,7 +4,6 @@
       <div class="col-md-12">
         <div id="error_explanation">
           <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
-
           <ul>
           <% @trade.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -34,14 +33,14 @@
       </div>
       <div class="form-group">
         <%= f.label :note %><br>
-        <%= f.text_area :note, class: "date-select form-control" %>
+        <%= f.text_area :note, class: "form-control" %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="actions">
-        <%= f.submit %>
+        <%= f.submit 'Update Trade Details', class: "btn btn-primary" %>
       </div>
     </div>
   </div>

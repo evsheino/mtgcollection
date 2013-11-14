@@ -1,9 +1,15 @@
 <table class="traded-cards table table-hover">
-  <% rows.each do |row| %>
+  <% if rows.empty? %>
     <tr>
-      <td><%= row %></td>
-      <td><%= row.amount %></td>
-      <td><%= row.delete_link %></td>
+      <td>Add cards or money above</td>
     </tr>
+  <% else %>
+    <% rows.each do |row| %>
+      <tr>
+        <td><%= row %></td>
+        <td><%= row.amount %></td>
+        <td><%= row.delete_link %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
