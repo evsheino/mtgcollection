@@ -6,10 +6,13 @@ printings_per_card = 5
   Expansion.create :name => "expansion_#{i}", code: "#{i}"
 end
 
+e_ids = Expansion.pluck(:id)
+
 (1..cards).each do |i|
-  e = Expansion.where(id: Expansion.pluck(:id).sample(printings_per_card))
-  c = Card.create :name => "card_#{i}", code: "#{i}"
-  (1..printings_per_card).each do |n|
-    Printing.create card: c, expansion: e[n]
+  e = Expansion.where(id: e_ids.sample(printings_per_card))
+  c = Card.new :name => "card_#{i}"
+  (0..printings_per_card-1).each do |n|
+    c.expansions << e[n]
   end
+  c.save
 end
