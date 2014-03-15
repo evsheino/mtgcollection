@@ -1,4 +1,4 @@
-class TradedCardDecorator < Draper::Decorator
+class TradedCardDecorator < ApplicationDecorator
   delegate_all
 
   def amount

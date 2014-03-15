@@ -1,4 +1,4 @@
-class TradeDecorator < Draper::Decorator
+class TradeDecorator < ApplicationDecorator
   delegate_all
   decorates_associations :traded_cards, :payments
 

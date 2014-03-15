@@ -1,4 +1,4 @@
-class OwnedCardDecorator < Draper::Decorator
+class OwnedCardDecorator < ApplicationDecorator
   delegate_all
 
   def foil

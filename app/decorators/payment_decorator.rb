@@ -1,4 +1,4 @@
-class PaymentDecorator < Draper::Decorator
+class PaymentDecorator < ApplicationDecorator
   delegate_all
 
   def amount
