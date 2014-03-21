@@ -9,3 +9,5 @@
 <% if @printings %>
   <%= render 'list', :printings => @printings %>
 <% end %>
+
+<%= will_paginate @cards %>
