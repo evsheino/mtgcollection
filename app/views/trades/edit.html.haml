@@ -1,14 +1,15 @@
 %h1 Editing trade
 .row
-  .col-md-6
+  .col-md-5
     = render 'show_details'
   .col-md-2
     = link_to 'Edit Details', edit_details_trade_path(@trade), class: 'btn btn-primary'
+  .col-md-5
+    = link_to 'Update Collection and Close Trade',
+          execute_trade_path(@trade), class: 'btn btn-primary', method: :post
 .row
   .col-md-12
     %hr/
-    = link_to 'Update Collection and Close Trade',
-          execute_trade_path(@trade), class: 'btn btn-primary', method: :post
 .row
   .col-md-3
     %h3 Add Cards
