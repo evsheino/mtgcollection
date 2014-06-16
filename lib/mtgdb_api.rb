@@ -21,8 +21,13 @@ module MtgDbAPI
     get_data(EXPANSION_SERVICE, id)
   end
 
+  def self.cards_in_expansion_by_id(id)
+    url = "#{WEBSERVICE_URL}/#{EXPANSION_SERVICE}/#{id}/cards"
+    HTTParty.get(url).parsed_response
+  end
+
   def self.get_data(service, query)
-    url = "#{WEBSERVICE_URL}/#{service}/#{query}"
+    url = "#{WEBSERVICE_URL}/#{service}/#{query.to_s.gsub(' ', '%20')}"
     HTTParty.get(url).parsed_response
   end
 end

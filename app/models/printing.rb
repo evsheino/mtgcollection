@@ -1,3 +1,5 @@
+require 'mtgdb_api'
+
 class Printing < ActiveRecord::Base
   belongs_to :card
   belongs_to :expansion
@@ -9,10 +11,12 @@ class Printing < ActiveRecord::Base
 
   # Do a text search by card name
   def self.search_by_name(search)
-    if search
-      joins(:card).joins(:expansion).where("cards.name LIKE ?", "%#{search.strip}%")
-    else
-      all
+    if search && search != ""
+      l = MtgDbAPI.search_by_name(search)
+      l.map { |x| 
+        Printing.new(card: Card.new(name: x['name']), 
+                     expansion: Expansion.new(name: x['cardSetId'])) }
+      .sort! { |a,b| a.card.name <=> b.card.name }
     end
   end
 
@@ -26,13 +30,24 @@ class Printing < ActiveRecord::Base
   end
 
   def self.search(name, expansion)
-    if name || expansion
-      result = joins(:card).joins(:expansion).
-          where("cards.name LIKE ? AND expansions.name LIKE ?", "%#{name.strip}%", "%#{expansion.strip}%")
-    else
-      result = all
+    name = nil if name == ''
+    expansion = nil if expansion == ''
+
+    cards = []
+    if name
+      cards = search_by_name(name)
+    elsif expansion
+      return MtgDbAPI.cards_in_expansion_by_id(expansion)
+      .map { |x| Printing.new(card: Card.new(name: x['name']), 
+                     expansion: Expansion.new(name: x['cardSetId'])) }
+      .sort! { |a,b| a.card.name <=> b.card.name }
     end
-    result.includes(:expansion, :card)
+
+    if cards && expansion
+      cards = cards.select! { |x| x.expansion.name == expansion }
+    end
+
+    cards
   end
 
   def to_s
