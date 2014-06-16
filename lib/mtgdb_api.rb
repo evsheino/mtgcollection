@@ -27,7 +27,8 @@ module MtgDbAPI
   end
 
   def self.get_data(service, query)
-    url = "#{WEBSERVICE_URL}/#{service}/#{query.to_s.gsub(' ', '%20')}"
+    query = query.to_s.gsub(/[\W,]/, '%20')
+    url = "#{WEBSERVICE_URL}/#{service}/#{query}"
     HTTParty.get(url).parsed_response
   end
 end

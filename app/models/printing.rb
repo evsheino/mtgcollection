@@ -20,34 +20,32 @@ class Printing < ActiveRecord::Base
     end
   end
 
-  # Do a text search by expansion name
-  def self.search_by_expansion(search)
-    if search
-      joins(:expansion).joins(:card).where("expansions.name LIKE ?", "%#{search.strip}%")
-    else
-      all
-    end
+  # Find cards by (exact) expansion
+  def self.find_by_expansion(expansion)
+      MtgDbAPI.cards_in_expansion_by_id(expansion)
+          .map { |x| Printing.new(card: Card.new(name: x['name']), 
+                         expansion: Expansion.new(name: x['cardSetId'])) }
+          .sort! { |a,b| a.card.name <=> b.card.name }
   end
 
+  # Search by card name and expansion.
+  # If either is blank, only the other is used.
   def self.search(name, expansion)
     name = nil if name == ''
-    expansion = nil if expansion == ''
+    expansion = expansion == '' ? nil : expansion.upcase
 
     cards = []
     if name
       cards = search_by_name(name)
     elsif expansion
-      return MtgDbAPI.cards_in_expansion_by_id(expansion)
-      .map { |x| Printing.new(card: Card.new(name: x['name']), 
-                     expansion: Expansion.new(name: x['cardSetId'])) }
-      .sort! { |a,b| a.card.name <=> b.card.name }
+      return find_by_expansion(expansion)
     end
 
     if cards && expansion
-      cards = cards.select! { |x| x.expansion.name == expansion }
+      cards.select! { |x| x.expansion.name == expansion }
     end
 
-    cards
+    cards || []
   end
 
   def to_s
