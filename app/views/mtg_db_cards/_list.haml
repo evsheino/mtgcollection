@@ -1,0 +1,12 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Card
+      %th Expansion
+      %th
+      %th
+  %tbody
+    - cards.each do |card|
+      %tr
+        %td= link_to card.name, ""
+        %td= link_to card.cardSetId, ""

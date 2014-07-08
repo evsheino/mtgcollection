@@ -29,6 +29,8 @@ Mtgcollection::Application.routes.draw do
 
   resources :sessions
 
+  resources :mtg_db_cards
+
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
   get 'signout' => 'sessions#destroy', via: 'delete'

@@ -1,0 +1,17 @@
+<%= form_for(@mtg_db_card) do |f| %>
+  <% if @mtg_db_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mtg_db_card.errors.count, "error") %> prohibited this mtg_db_card from being saved:</h2>
+
+      <ul>
+      <% @mtg_db_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

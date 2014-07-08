@@ -1,0 +1,10 @@
+%h1 Card Search
+= form_tag cards_path, method: 'get' do
+  Name 
+  = text_field_tag :name, params[:name]
+  Expansion 
+  = text_field_tag :expansion, params[:expansion]
+  = submit_tag "Search", name: nil, class: 'btn btn-primary'
+- if @cards
+  = render 'list', :cards => @cards
+  = will_paginate @cards

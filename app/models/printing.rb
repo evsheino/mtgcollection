@@ -38,10 +38,12 @@ class Printing < ActiveRecord::Base
     if name
       cards = search_by_name(name)
     elsif expansion
+      # Only expansion specified
       return find_by_expansion(expansion)
     end
 
     if cards && expansion
+      # Filter cards by expansion
       cards.select! { |x| x.expansion.name == expansion }
     end
 
