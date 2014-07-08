@@ -9,9 +9,9 @@ class MtgDbCardsController < ApplicationController
   def index
 
     respond_to do |format|
-      format.html {@cards = MtgDbAPI.search(params[:name], params[:expansion]).paginate(page: params[:page])}
+      format.html {@cards = MtgDbCard.search(params[:name], params[:expansion]).paginate(page: params[:page])}
       format.json {
-        render json: MtgDbAPI.search(params[:name], params[:expansion]).includes(:card, :expansion),
+        render json: MtgDbCard.search(params[:name], params[:expansion]).includes(:card, :expansion),
                methods: [:card, :expansion]
       }
     end
@@ -74,7 +74,7 @@ class MtgDbCardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mtg_db_card
-      @mtg_db_card = MtgDbCard.find(params[:id])
+      @card = MtgDbCard.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
