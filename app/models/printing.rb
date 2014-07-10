@@ -5,7 +5,7 @@ class Printing < ActiveRecord::Base
   has_many :users, through: :owned_cards
 
   validates_uniqueness_of :card_id, scope: :expansion_id
-  validates_uniqueness_of :multiverse_id
+  validates :multiverse_id, presence: true, uniqueness: true
 
   # Do a text search by card name
   def self.search_by_name(search)

@@ -23,8 +23,8 @@ describe MtgDbCardsController do
 
   describe "GET show" do
     it "assigns the requested mtg_db_card as @mtg_db_card" do
-      get :show, {:id => mtg_db_card.to_param}, valid_session
-      assigns(:card).should eq(mtg_db_card)
+      get :show, {:id => mtg_db_card.id}, valid_session
+      assigns(:card).id.should eq(mtg_db_card.id)
     end
   end
 

@@ -19,6 +19,7 @@ FactoryGirl.define do
   factory :printing do
     card
     expansion
+    multiverse_id 1
   end
 
   factory :trade do
