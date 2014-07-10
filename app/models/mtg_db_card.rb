@@ -14,6 +14,7 @@ class MtgDbCard
     MtgDbAPI.search(name, expansion)
   end
 
+  # Define find so that this acts like a normal model in this regard.
   def self.find(id)
     new(MtgDbAPI.card_by_id(id))
   end

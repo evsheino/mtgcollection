@@ -5,7 +5,8 @@ gem 'rails', '4.0.0'
 
 group :test, :development do
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails', '~> 2.99'
+  gem 'rspec-activemodel-mocks'
 end
 
 #group :development do

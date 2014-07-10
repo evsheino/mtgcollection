@@ -31,4 +31,9 @@ FactoryGirl.define do
     trade
     amount -10
   end
+
+  factory :mtg_db_card do
+    id 1
+  end
+
 end
