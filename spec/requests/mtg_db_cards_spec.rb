@@ -4,7 +4,7 @@ describe "MtgDbCards" do
   describe "GET /mtg_db_cards" do
     it "works! (now write some real specs)" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get mtg_db_cards_path
+      get mtg_db_card_path
       response.status.should be(200)
     end
   end

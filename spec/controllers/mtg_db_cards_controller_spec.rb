@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe MtgDbCardsController do
   let(:user) { FactoryGirl.create(:user) }
+  let(:mtg_db_card) { FactoryGirl.create(:mtg_db_card) }
 
   # This should return the minimal set of attributes required to create a valid
   # MtgDbCard. As you add validations to MtgDbCard, be sure to
@@ -23,7 +24,7 @@ describe MtgDbCardsController do
   describe "GET show" do
     it "assigns the requested mtg_db_card as @mtg_db_card" do
       get :show, {:id => mtg_db_card.to_param}, valid_session
-      assigns(:mtg_db_card).should eq(mtg_db_card)
+      assigns(:card).should eq(mtg_db_card)
     end
   end
 

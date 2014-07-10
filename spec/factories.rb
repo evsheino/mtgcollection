@@ -33,6 +33,7 @@ FactoryGirl.define do
   end
 
   factory :mtg_db_card do
+    skip_create
     id 1
   end
 

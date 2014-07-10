@@ -34,6 +34,6 @@ class MtgDbCard
   end
 
   def persisted?
-    false
+    true
   end
 end
