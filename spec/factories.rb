@@ -13,13 +13,12 @@ FactoryGirl.define do
 
   factory :card do
     sequence(:name) { |n| "card#{n}" }
-    expansions { [FactoryGirl.create(:expansion)] }
   end
 
   factory :printing do
     card
     expansion
-    multiverse_id 1
+    sequence(:multiverse_id, 1)
   end
 
   factory :trade do
@@ -35,7 +34,7 @@ FactoryGirl.define do
 
   factory :mtg_db_card do
     skip_create
-    id 1
+    sequence(:id, 1)
   end
 
 end

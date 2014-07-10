@@ -35,7 +35,8 @@ describe "User" do
       sign_in 'Pekka', 'foobar1'
 
       card = FactoryGirl.create(:card, name: 'Grey Ogre')
-      OwnedCard.create(user: user, printing: card.printings.first, number: 1)
+      printing = FactoryGirl.create(:printing, card: card)
+      OwnedCard.create(user: user, printing: printing, number: 1)
 
       visit user_path(user)
 
