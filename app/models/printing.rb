@@ -35,6 +35,15 @@ class Printing < ActiveRecord::Base
     result.includes(:expansion, :card)
   end
 
+  def self.find_or_create_from_mtg_db_card(mtg_db_card)
+    printing = find_by(multiverse_id: mtg_db_card.id)
+    return printing unless printing.nil?
+
+    expansion = Expansion.find_or_create_by(code: mtg_db_card.cardSetId)
+    card = Card.find_or_create_by(name: mtg_db_card.name)
+    create(expansion: expansion, card: card, multiverse_id: mtg_db_card.id)
+  end
+
   def to_s
     "#{card.name} (#{expansion.name})"
   end
