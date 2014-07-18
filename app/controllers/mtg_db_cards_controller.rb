@@ -8,10 +8,13 @@ class MtgDbCardsController < ApplicationController
   # GET /mtg_db_cards.json
   def index
     respond_to do |format|
-      format.html {@cards = MtgDbCard.search(params[:name], params[:expansion]).paginate(page: params[:page])}
+      format.html {
+        @cards = MtgDbCardDecorator.decorate_collection(
+          MtgDbCard.search(params[:name], params[:expansion]).paginate(page: params[:page])
+        )
+      }
       format.json {
-        render json: MtgDbCard.search(params[:name], params[:expansion]).includes(:card, :expansion),
-               methods: [:card, :expansion]
+        render json: MtgDbCard.search(params[:name], params[:expansion])
       }
     end
   end

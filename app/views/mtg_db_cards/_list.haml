@@ -3,10 +3,11 @@
     %tr
       %th Card
       %th Expansion
-      %th
+      %th Owned
       %th
   %tbody
     - cards.each do |card|
       %tr
         %td= link_to card.name, mtg_db_card_path(card.id)
         %td= link_to card.cardSetId, ""
+        %td= card.owned

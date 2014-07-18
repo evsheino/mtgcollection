@@ -1,5 +1,5 @@
 %h1 Card Search
-= form_tag cards_path, method: 'get' do
+= form_tag mtg_db_cards_path, method: 'get' do
   Name 
   = text_field_tag :name, params[:name]
   Expansion 
