@@ -13,7 +13,7 @@ class OwnedCard < ActiveRecord::Base
     owned_card = find_or_initialize_by(printing: printing, user: user)
     owned_card.number = 0 if owned_card.number.nil?
     owned_card.number += amount
-    owned_card.save
+    owned_card.save!
 
     owned_card
   end
