@@ -7,7 +7,11 @@
       %th
   %tbody
     - cards.each do |card|
-      %tr
-        %td= link_to card.name, mtg_db_card_path(card.id)
-        %td= link_to card.cardSetId, ""
-        %td= card.owned
+      %tr{id: card.id}
+        %td.card-name= link_to card.name, mtg_db_card_path(card.id)
+        %td.card-expansion= link_to card.cardSetId, ""
+        %td.amount-owned= card.owned
+        %td.plus-minus-button-container
+          = button_to "+", { action: "add_to_collection", id: card.id }, remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
+        %td.plus-minus-button-container
+          = button_to "-", { action: "deduct_from_collection", id: card.id }, remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'

@@ -28,7 +28,7 @@ class MtgDbCard
   def amount_owned(user)
     owned_card = OwnedCard.joins(:printing)
       .find_by('printings.multiverse_id' => @id, user_id: user.id)
-    owned.number unless owned_card.nil?
+    owned_card.number unless owned_card.nil?
   end
 
   def creature?

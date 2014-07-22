@@ -29,7 +29,10 @@ Mtgcollection::Application.routes.draw do
 
   resources :sessions
 
-  resources :mtg_db_cards
+  resources :mtg_db_cards do
+    post 'add_to_collection', on: :member
+    post 'deduct_from_collection', on: :member
+  end
 
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
