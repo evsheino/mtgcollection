@@ -77,3 +77,5 @@ gem 'draper', '~> 1.3'
 gem 'bootstrap-datepicker-rails'
 
 gem 'haml'
+
+gem 'haml-rails'
