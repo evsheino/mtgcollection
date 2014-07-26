@@ -19,6 +19,21 @@ class MtgDbCard
     new(MtgDbAPI.card_by_id(id))
   end
 
+  def card_list
+    printings = Printing.includes(:card, :expansion)
+    list = printings.reduce([]) {
+        |r, e| r << {
+          value: e.to_s,
+          id: e.id,
+          tokens: e.card.name.split(),
+          expansion: e.expansion.name
+      }
+    }
+    respond_to do |format|
+      format.json {render json: list}
+    end
+  end
+
   def initialize(attributes = {})
     attributes.each do |name, value|
       send("#{name}=", value)
@@ -41,5 +56,9 @@ class MtgDbCard
 
   def persisted?
     true
+  end
+
+  def to_s
+    "#{name} (#{cardSetId})"
   end
 end

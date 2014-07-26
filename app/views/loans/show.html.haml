@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Owner:
+  = @loan.owner_id
+%p
+  %b Borrower:
+  = @loan.borrower_id
+%p
+  %b Owned card:
+  = @loan.owned_card_id
+%p
+  %b Number:
+  = @loan.number
+%p
+  %b Note:
+  = @loan.note
+
+= link_to 'Edit', edit_loan_path(@loan)
+\|
+= link_to 'Back', loans_path
