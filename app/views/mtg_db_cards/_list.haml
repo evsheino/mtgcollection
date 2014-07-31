@@ -14,11 +14,14 @@
         %td.card-expansion= link_to card.cardSetId, ""
         %td.amount-owned= card.owned
         %td.plus-minus-button-container
-          = button_to "+", { action: "add_to_collection", id: card.id }, remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
+          = button_to "+", { action: "add_to_collection", id: card.id }, 
+              remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
         %td.plus-minus-button-container
-          = button_to "-", { action: "deduct_from_collection", id: card.id }, remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
+          = button_to "-", { action: "deduct_from_collection", id: card.id }, 
+              remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
         %td.plus-minus-button-container
-          = button_tag "Borrow", { id: "btn-borrow-#{card.id}", class: 'btn btn-primary btn-borrow', data: {target: "#loan-form-#{card.id}"}}
+          = button_tag "Borrow", { id: "btn-borrow-#{card.id}", 
+              class: 'btn btn-primary btn-borrow', data: {target: "#loan-form-#{card.id}"}}
       %tr{id: "loan-form-#{card.id}", hidden: true}
         %td{colspan: 6}
           = form_tag '/borrow', class: 'form-inline' do
@@ -27,9 +30,12 @@
               = number_field_tag(:number, 1, {min: 1, class: 'small-number form-control'})
             .form-group
               = label_tag(:owner, nil, class: 'sr-only')
-              = text_field_tag(:owner_id, nil, class: 'user-select typeahead form-control', placeholder: 'Owner')
+              = text_field_tag(:owner, nil, {class: 'user-select typeahead form-control', 
+                  placeholder: 'Owner', data: {target: "#owner_id_#{card.id}"}})
+              = hidden_field_tag(:owner_id, nil, id: "owner_id_#{card.id}")
             .form-group
               = label_tag(:note, nil, class: 'sr-only')
-              = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', placeholder: 'Note'})
+              = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
+                  placeholder: 'Note'})
             .form-group
               = button_tag "Add", class: 'btn btn-primary'

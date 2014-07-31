@@ -15,12 +15,12 @@ initializeUserAutocomplete = (target) ->
     limit: 10,
   })
 
-setUserId = (userInfo) ->
-  $('#user-autocomplete-multiverse-id').val(userInfo.id)
+setUserId = (event, userInfo) ->
+  $($(event.target).data().target).val(userInfo.id)
 
 handleAutocomplete = ->
-  $("#user-autocomplete").on "typeahead:autocompleted", (e, i) -> setUserId(i)
-  $("#user-autocomplete").on "typeahead:selected", (e, i) -> setUserId(i)
+  $(".user-select").on "typeahead:autocompleted", (e, i) -> setUserId(e, i)
+  $(".user-select").on "typeahead:selected", (e, i) -> setUserId(e, i)
 
 $(document).on "page:load", ->
   handleAutocomplete()
