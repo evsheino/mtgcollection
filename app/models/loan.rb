@@ -4,14 +4,23 @@ class Loan < ActiveRecord::Base
   belongs_to :owned_card
 
   validates_presence_of :owned_card
-  validates_presence_of :borrower, unless: :owner_id?
   validates :number, numericality: { greater_than: 0 }
-  ##validate :validate_users
+  validate :validate_users
 
-#  def validate_users
-#    unless owner.nil? || owner.username == owner_name
-#      errors.add(:owner, "is required"
-#    ((owner.username == owner_name) unless owner_id.nil?) && 
-#      ((borrower.username == borrower_name) unless borrower_id.nil?)
-#  end
+  def validate_users
+    if owner.nil? && borrower.nil?
+      errors.add("User required")
+    else
+      if owner_id == borrower_id
+        errors.add("Owner and borrower cannot be the same")
+      else
+        if owner.nil? && owner_name.nil?
+          errors.add(:owner, "is required")
+        end
+        if borrower.nil? && borrower_name.nil?
+          errors.add(:borrower, "is required")
+        end
+      end
+    end
+  end
 end

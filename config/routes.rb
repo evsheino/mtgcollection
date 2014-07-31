@@ -26,6 +26,7 @@ Mtgcollection::Application.routes.draw do
   resources :expansions
 
   resources :users
+  get 'data/user_list', to: 'users#list'
 
   resources :cards
 

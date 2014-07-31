@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         |r, e| r << {
           value: e.username,
           id: e.id,
-          tokens: e.username.split(),
+          tokens: e.username,
       }
     }
     respond_to do |format|

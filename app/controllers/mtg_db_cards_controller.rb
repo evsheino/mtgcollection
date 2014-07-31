@@ -12,6 +12,7 @@ class MtgDbCardsController < ApplicationController
         @cards = MtgDbCardDecorator.decorate_collection(
           MtgDbCard.search(params[:name], params[:expansion]).paginate(page: params[:page])
         )
+        @users = User.all
       }
       format.json {
         render json: MtgDbCard.search(params[:name], params[:expansion])

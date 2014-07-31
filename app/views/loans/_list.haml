@@ -1,0 +1,15 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Card
+      %th Expansion
+      %th Owned
+      %th
+  %tbody
+    - cards.each do |card|
+      %tr{id: card.id}
+        %td.card-name= link_to card.name, mtg_db_card_path(card.id)
+        %td.card-expansion= link_to card.cardSetId, ""
+        %td.amount-owned= card.owned
+        %td.add-button-container
+          = button_to "Add", { action: "add", id: card.multiverse_id, type: @type }, remote: true, class: 'btn btn-primary', form_class: 'form-inline'

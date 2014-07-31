@@ -2,24 +2,30 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-initializeCardAutocomplete = ->
-  $('#card-autocomplete').typeahead({
-    name: 'cards',
-    prefetch: '/data/card_list.json',
+toggleLoanForm = ->
+  $('.btn-borrow').click -> 
+    target = $(@).data().target
+    $(target).toggle()
+    initializeUserAutocomplete(target)
+
+initializeUserAutocomplete = (target) ->
+  $("#{target} .user-select").typeahead({
+    name: 'users',
+    prefetch: '/data/user_list.json',
     limit: 10,
   })
 
-setCardId = (cardInfo) ->
-  $('#card-autocomplete-multiverse-id').val(cardInfo.id)
+setUserId = (userInfo) ->
+  $('#user-autocomplete-multiverse-id').val(userInfo.id)
 
 handleAutocomplete = ->
-  $("#card-autocomplete").on "typeahead:autocompleted", (e, i) -> setCardId(i)
-  $("#card-autocomplete").on "typeahead:selected", (e, i) -> setCardId(i)
+  $("#user-autocomplete").on "typeahead:autocompleted", (e, i) -> setUserId(i)
+  $("#user-autocomplete").on "typeahead:selected", (e, i) -> setUserId(i)
 
-$(document).on "page:change", ->
-  initializeCardAutocomplete()
+$(document).on "page:load", ->
   handleAutocomplete()
+  toggleLoanForm()
 
-$ ->
-  initializeCardAutocomplete()
+$(document).ready ->
   handleAutocomplete()
+  toggleLoanForm()

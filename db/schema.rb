@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 20140724103201) do
   end
 
   create_table "loans", force: true do |t|
-    t.integer  "owner_id"
-    t.integer  "borrower_id"
     t.integer  "owned_card_id"
     t.integer  "number"
     t.string   "note"
@@ -36,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140724103201) do
     t.datetime "updated_at"
     t.string   "borrower_name"
     t.string   "owner_name"
+    t.integer  "borrower_id"
+    t.integer  "owner_id"
   end
 
   create_table "owned_cards", force: true do |t|
