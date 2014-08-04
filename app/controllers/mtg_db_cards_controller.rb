@@ -41,6 +41,32 @@ class MtgDbCardsController < ApplicationController
     end
   end
 
+  def borrow
+    card = MtgDbCard.find(params[:card_id])
+    printing = Printing.find_or_create_from_mtg_db_card(card)
+    owner_name = params[:owner]
+    owner = User.find_by(username: owner_name)
+    if owner.nil?
+      loan = Loan.find_or_initialize_by(owner_name: owner_name,
+                                        borrower_id: current_user.id,
+                                        printing_id: printing.id)
+    else
+      loan = Loan.find_or_initialize_by(owner_id: owner.id,
+                                        borrower_id: current_user.id,
+                                        printing_id: printing.id)
+    end
+
+    if loan.number.nil? then loan.number = 0 end
+    loan.number += params[:number].to_i
+    loan.save
+
+    respond_to do |format|
+      @card = MtgDbCardDecorator.decorate(card)
+      @loan = loan
+      format.js { render 'mtg_db_cards/update_loan' }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mtg_db_card

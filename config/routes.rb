@@ -36,6 +36,8 @@ Mtgcollection::Application.routes.draw do
     post 'add_to_collection', on: :member
     post 'deduct_from_collection', on: :member
   end
+  post 'mtg_db_cards/borrow', to: 'mtg_db_cards#borrow'
+
 
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'

@@ -34,17 +34,26 @@ module MtgDbAPI
 
   # Do a text search by card name
   def self.search_card_by_name(search)
+    return Rails.cache.read(search) if Rails.cache.exist?(search)
+
     if search && search != ""
       l = search_by_name(search)
-      sort_cards(l.map { |x| MtgDbCard.new(x) })
+      l = sort_cards(l.map { |x| MtgDbCard.new(x) })
     end
+    Rails.cache.write(search, l)
+    l
   end
 
   # Find cards by (exact) expansion
   def self.find_by_expansion(expansion)
-    sort_cards(
+    return Rails.cache.read(expansion) if Rails.cache.exist?(expansion)
+
+    l = sort_cards(
           cards_in_expansion_by_id(expansion)
           .map { |x| MtgDbCard.new(x) })
+
+    Rails.cache.write(expansion, l)
+    l
   end
 
   # Search by card name and expansion.

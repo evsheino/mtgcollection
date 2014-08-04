@@ -1,9 +1,9 @@
 class Loan < ActiveRecord::Base
   belongs_to :owner, class_name: 'User'
   belongs_to :borrower, class_name: 'User'
-  belongs_to :owned_card
+  belongs_to :printing
 
-  validates_presence_of :owned_card
+  validates_presence_of :printing
   validates :number, numericality: { greater_than: 0 }
   validate :validate_users
 

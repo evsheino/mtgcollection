@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724103201) do
+ActiveRecord::Schema.define(version: 20140731192716) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140724103201) do
   end
 
   create_table "loans", force: true do |t|
-    t.integer  "owned_card_id"
+    t.integer  "printing_id"
     t.integer  "number"
     t.string   "note"
     t.datetime "created_at"

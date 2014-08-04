@@ -42,8 +42,19 @@ class MtgDbCard
 
   def amount_owned(user)
     owned_card = OwnedCard.joins(:printing)
-      .find_by('printings.multiverse_id' => @id, user_id: user.id)
-    owned_card.number unless owned_card.nil?
+        .find_by('printings.multiverse_id' => @id, user_id: user.id)
+    if owned_card.nil? then 0 else owned_card.number end
+  end
+
+  def amount_available(user)
+    number = amount_owned(user)
+    borrowed = Loan.joins(:printing).find_by('printings.multiverse_id' => @id,
+                                  borrower_id: user.id)
+    loaned = Loan.joins(:printing).find_by('printings.multiverse_id' => @id,
+                                  owner_id: user.id)
+    number += borrowed.number unless borrowed.nil?
+    number -= loaned.number unless loaned.nil?
+    number
   end
 
   def creature?
