@@ -1,0 +1,2 @@
+$('#search-list-table').remove();
+$("<%= escape_javascript(render 'trades/search_list', { cards: @cards, trade: @trade }) %>").appendTo("#search-list");

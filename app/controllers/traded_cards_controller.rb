@@ -41,8 +41,7 @@ class TradedCardsController < ApplicationController
   # Create a new record unless the same printing exists in the related trade, in which case update the
   # number of the existing record.
   def create_or_update
-    p = traded_card_params
-    p[:number] = -p[:number].to_i if params[:mine]
+    p = traded_card_params_from_search_list_params
 
     @traded_card = TradedCard.increment_number_or_initialize(p)
     @trade = @traded_card.trade.decorate
@@ -96,4 +95,18 @@ class TradedCardsController < ApplicationController
     def traded_card_params
       params.require(:traded_card).permit(:trade_id, :printing_id, :foil, :signed, :altered, :number)
     end
+
+    def traded_card_params_from_search_list_params
+      p = {}
+      if params[:mine]
+        p[:number] = -params[:number].to_i
+      else
+        p[:number] = params[:number].to_i
+      end
+      p[:printing_id] = Printing.find_or_create_by_multiverse_id(params[:multiverse_id]).id
+      p[:foil] = params[:foil] unless params[:foil].nil?
+      p[:trade_id] = params[:trade_id].to_i
+      p
+    end
+
 end

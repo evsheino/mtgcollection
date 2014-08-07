@@ -20,8 +20,7 @@ class TradedCard < ActiveRecord::Base
   # Then increment the number with the number in the given attributes and return the record (without saving).
   def self.increment_number_or_initialize(attributes)
     number = attributes[:number].to_i
-    attrs = type_cast_attributes(attributes.except(:number))
-    card = find_or_initialize_by(attrs) do |c|
+    card = find_or_initialize_by(attributes.except(:number)) do |c|
       c.number = 0
     end
     card.number += number

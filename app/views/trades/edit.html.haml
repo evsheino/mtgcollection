@@ -1,56 +1,15 @@
 %h1 Editing trade
 .row
-  .col-md-5
+  .col-md-8
     = render 'show_details'
   .col-md-2
     = link_to 'Edit Details', edit_details_trade_path(@trade), class: 'btn btn-primary'
-  .col-md-5
-    = link_to 'Update Collection and Close Trade',
+  .col-md-2
+    = link_to 'Update Collection',
           execute_trade_path(@trade), class: 'btn btn-primary', method: :post
 .row
   .col-md-12
     %hr/
-.row
-  .col-md-3
-    %h3 Add Cards
-    = form_for(@new_card, url: { controller: 'traded_cards', action: 'create_or_update' }, |
-      class: 'form-inline', remote: true) do |f|                                           |
-      .row
-        .col-md-12
-          .form-group
-            = label_tag('new-traded-card', 'Card', class: 'sr-only')
-            = text_field_tag('new-traded-card', nil, class: 'typeahead form-control', placeholder: 'Card Name')
-          .checkbox-inline
-            %label
-              = f.check_box(:foil)
-              Foil
-          .checkbox-inline
-            %label
-              = f.check_box(:signed)
-              Signed
-          .checkbox-inline
-            %label
-              = f.check_box(:altered)
-              Altered
-          = f.hidden_field(:printing_id)
-          = f.hidden_field(:trade_id, value: @trade.id)
-          = f.hidden_field(:number, value: 1)
-      .row
-        .col-md-12
-          = f.submit('Add Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card')
-          = f.submit('Add Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card')
-  .col-md-3
-    %h3 Add Money
-    = form_tag(create_or_update_payments_path, class: 'form-inline', remote: true) do
-      .row
-        .col-md-12
-          .form-group
-            = number_field_tag('payment[amount]', nil, { class: 'form-control' })
-      .row
-        .col-md-12
-          = hidden_field_tag('payment[trade_id]', @trade.id)
-          = submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine'
-          = submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs'
 .row
   .col-md-12
     .row
@@ -62,6 +21,32 @@
         #their-cards
           %h2 Theirs
           = render 'traded_cards', rows: @trade.their_side
+.row
+  .col-md-12
+    %h3 Add Cards
+    .row
+      .col-md-12
+        = form_tag({ controller: 'trades', action: 'list_cards' }, { class: 'form-inline', method: 'get', remote: true }) do
+          .form-group
+            = label_tag(:card_name, nil, class: 'sr-only')
+            = text_field_tag :name, params[:name], class: 'form-control', placeholder: 'Card Name'
+          .form-group
+            = label_tag(:expansion, nil, class: 'sr-only')
+            = text_field_tag :expansion, params[:expansion], class: 'form-control', placeholder: 'Expansion'
+          .form-group
+            = submit_tag "Search", name: nil, class: 'btn btn-primary'
+.row
+  .col-md-12#search-list
+    = render 'search_list', { :cards => @cards, :trade => @trade }
+.row
+  .col-md-12
+    %h3 Add Money
+    = form_tag(create_or_update_payments_path, class: 'form-inline', remote: true) do
+      .form-group
+        = number_field_tag('payment[amount]', nil, { class: 'form-control' })
+      = hidden_field_tag('payment[trade_id]', @trade.id)
+      = submit_tag 'Add Mine', class: 'btn btn-primary', name: 'mine'
+      = submit_tag 'Add Theirs', class: 'btn btn-primary', name: 'theirs'
 .row
   .col-md-12
     %br/

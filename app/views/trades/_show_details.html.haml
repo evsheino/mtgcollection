@@ -1,12 +1,12 @@
 .row
   .col-md-4
-    %strong User:
+    = label_tag(:user)
     = @trade.user
   .col-md-4
-    %strong Partner:
+    = label_tag(:partner)
     = @trade.partner
   .col-md-4
-    %strong Date:
+    = label_tag(:date)
     = @trade.date
 .row
   .col-md-12

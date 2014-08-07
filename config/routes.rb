@@ -6,15 +6,15 @@ Mtgcollection::Application.routes.draw do
     post 'create_or_update', on: :collection
   end
 
-  resources :traded_cards do
-    post 'create_or_update', on: :collection
-  end
+  resources :traded_cards
+  post 'traded_cards/create_or_update', to: 'traded_cards#create_or_update'
 
   resources :trades do
     post 'add_card', on: :member
     post 'add_payment', on: :member
     post 'execute', on: :member
     get 'edit_details', on: :member
+    get 'list_cards', on: :member
   end
 
   get "places/index"

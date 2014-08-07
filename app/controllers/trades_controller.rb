@@ -1,5 +1,6 @@
 class TradesController < ApplicationController
-  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment, :edit_details, :execute]
+  before_action :set_trade, only: [:show, :edit, :update, :destroy, :add_payment,
+                                   :edit_details, :execute, :list_cards]
 
   # Add a payment to the trade.
   def add_payment
@@ -8,6 +9,20 @@ class TradesController < ApplicationController
     @trade = @trade.decorate
     respond_to do |format|
       format.js {render 'refresh_card_list'}
+    end
+  end
+
+  def list_cards
+    respond_to do |format|
+      format.js {
+        @cards = MtgDbCardDecorator.decorate_collection(
+          MtgDbCard.search(params[:name], params[:expansion]).paginate(page: params[:page])
+        )
+        render 'refresh_search_list'
+      }
+      format.json {
+        render json: MtgDbCard.search(params[:name], params[:expansion])
+      }
     end
   end
 
