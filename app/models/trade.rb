@@ -26,8 +26,8 @@ class Trade < ActiveRecord::Base
     end
   end
 
-  def execute
-    return false if closed
+  def execute(force=false)
+    return false if closed && !force
     update_user_collection
     self.closed = true
     save
