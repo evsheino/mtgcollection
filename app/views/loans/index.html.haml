@@ -1,4 +1,4 @@
-%h1 My loans
+%h1 My loaned cards
 
 %table.table.table-hover
   %tr
@@ -12,11 +12,34 @@
 
   - @loans.each do |loan|
     %tr
-      %td= loan.owned_card
+      %td= loan.printing
       %td= loan.borrower
       %td= loan.number
       %td= loan.note
       %td= link_to 'Show', loan
+      %td= link_to 'Edit', edit_loan_path(loan)
+      %td= link_to 'Destroy', loan, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+%h1 Cards borrowed by me
+
+%table.table.table-hover
+  %tr
+    %th Card
+    %th Owner
+    %th Number
+    %th Note
+    %th
+    %th
+    %th
+
+  - @borrowings.each do |loan|
+    %tr
+      %td= link_to loan.printing, mtg_db_card_path(loan.printing.multiverse_id)
+      %td= loan.owner
+      %td= loan.number
+      %td= loan.note
       %td= link_to 'Edit', edit_loan_path(loan)
       %td= link_to 'Destroy', loan, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

@@ -58,6 +58,7 @@ class MtgDbCardsController < ApplicationController
 
     if loan.number.nil? then loan.number = 0 end
     loan.number += params[:number].to_i
+    loan.note = params[:note]
     loan.save
 
     respond_to do |format|

@@ -1,0 +1,28 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Card
+      %th Expansion
+      %th Owned
+      %th
+      %th
+      %th
+  %tbody
+    - cards.each do |card|
+      %tr{id: card.id}
+        %td.card-name= link_to card.name, mtg_db_card_path(card.id)
+        %td.card-expansion= link_to card.cardSetId, ""
+        %td.amount-owned
+          = card.owned_and_available
+        %td
+          = form_for(@new_card, url: { controller: 'traded_cards', action: 'create_or_update' }, |
+            class: 'form-inline', remote: true) do |f|                                           |
+              .checkbox-inline
+                %label
+                  = f.check_box(:foil)
+                  Foil
+              = f.hidden_field(:id, value: card.id)
+              = f.hidden_field(:trade_id, value: @trade.id)
+              = f.hidden_field(:number, value: 1)
+              = f.submit('Mine', class: 'btn btn-primary', name: 'mine', id: 'add-my-card')
+              = f.submit('Theirs', class: 'btn btn-primary', name: 'theirs', id: 'add-their-card')

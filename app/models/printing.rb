@@ -45,6 +45,6 @@ class Printing < ActiveRecord::Base
   end
 
   def to_s
-    "#{card.name} (#{expansion.name})"
+    "#{card.name} (#{expansion.code})"
   end
 end

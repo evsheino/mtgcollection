@@ -4,7 +4,8 @@ class LoansController < ApplicationController
   # GET /loans
   # GET /loans.json
   def index
-    @loans = Loan.where(owner: current_user)
+    @borrowings = Loan.where(borrower: current_user).decorate
+    @loans = Loan.where(owner: current_user).decorate
   end
 
   # GET /loans/1
