@@ -38,6 +38,7 @@ Mtgcollection::Application.routes.draw do
   end
   post 'mtg_db_cards/borrow', to: 'mtg_db_cards#borrow'
 
+  resources :mtg_db_sets
 
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'

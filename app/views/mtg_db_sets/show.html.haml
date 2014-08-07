@@ -1,0 +1,25 @@
+%h1 
+  = @expansion.name
+.row
+  .col-xs-6 Id
+  .col-xs-6
+    = @expansion.id
+.row
+  .col-xs-6 Block
+  .col-xs-6
+    = @expansion.block
+.row
+  .col-xs-6 Released
+  .col-xs-6
+    = @expansion.releasedAt
+.row
+  .col-md-12
+    %p
+      = @expansion.description
+.row
+  .col-md-12 
+    %h3 Cards
+    - @expansion.cards.each do |card|
+      .row
+        .col-md-12
+          = link_to card.name, mtg_db_card_path(card.id)

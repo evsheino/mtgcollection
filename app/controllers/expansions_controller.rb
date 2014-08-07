@@ -4,7 +4,7 @@ class ExpansionsController < ApplicationController
   # GET /expansions
   # GET /expansions.json
   def index
-    @expansions = Expansion.all.paginate(page: params[:page])
+    @expansions = MtgDbAPI.all_expansions
   end
 
   # GET /expansions/1

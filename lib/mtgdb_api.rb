@@ -21,9 +21,24 @@ module MtgDbAPI
     get_data(EXPANSION_SERVICE, id)
   end
 
+  def self.all_expansions
+    key = 'all_sets'
+    return Rails.cache.read(key) if Rails.cache.exist?(key)
+
+    l = get_data(EXPANSION_SERVICE, '')
+    l.map! { |x| MtgDbSet.new(x) }
+    Rails.cache.write(key, l)
+    l
+  end
+
   def self.cards_in_expansion_by_id(id)
+    key = "expansion_cards_#{id}"
+    return Rails.cache.read(key) if Rails.cache.exist?(key)
+
     url = "#{WEBSERVICE_URL}/#{EXPANSION_SERVICE}/#{id}/cards"
-    HTTParty.get(url).parsed_response
+    cards = HTTParty.get(url).parsed_response.map { |x| MtgDbCard.new(x) }
+    Rails.cache.write(key, cards)
+    cards
   end
 
   def self.get_data(service, query)
@@ -34,25 +49,27 @@ module MtgDbAPI
 
   # Do a text search by card name
   def self.search_card_by_name(search)
-    return Rails.cache.read(search) if Rails.cache.exist?(search)
+    key = "card_search_#{search}"
+    return Rails.cache.read(key) if Rails.cache.exist?(key)
 
     if search && search != ""
       l = search_by_name(search)
       l = sort_cards(l.map { |x| MtgDbCard.new(x) })
     end
-    Rails.cache.write(search, l)
+    Rails.cache.write(key, l)
     l
   end
 
   # Find cards by (exact) expansion
   def self.find_by_expansion(expansion)
-    return Rails.cache.read(expansion) if Rails.cache.exist?(expansion)
+    key = "cards_in_expansion_#{expansion}"
+    return Rails.cache.read(key) if Rails.cache.exist?(key)
 
     l = sort_cards(
           cards_in_expansion_by_id(expansion)
           .map { |x| MtgDbCard.new(x) })
 
-    Rails.cache.write(expansion, l)
+    Rails.cache.write(key, l)
     l
   end
 

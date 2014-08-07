@@ -1,0 +1,17 @@
+%h1 Listing expansions
+%table.table.table-hover
+  %thead
+    %tr
+      %th Id
+      %th Name
+      %th Block
+      %th Released
+  %tbody
+    - @expansions.each do |expansion|
+      %tr
+        %td= link_to expansion.id, mtg_db_set_path(expansion.id)
+        %td= link_to expansion.name, mtg_db_set_path(expansion.id)
+        %td= expansion.block
+        %td= expansion.releasedAt
+%br/
+= will_paginate @expansions
