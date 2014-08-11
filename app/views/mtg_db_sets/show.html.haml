@@ -1,14 +1,21 @@
 %h1 
   = @expansion.name
 .row
-  .col-md-12
-    %dl.dl-horizontal
-      %dt Id
-      %dd= @expansion.id
-      %dt Block
-      %dd= @expansion.block
-      %dt Released
-      %dd= @expansion.releasedAt
+  .col-xs-2
+    %strong Id
+  .col-xs-6
+    = @expansion.id
+.row
+  .col-xs-2
+    %strong Block
+  .col-xs-6
+    = @expansion.block
+.row
+  .col-xs-2
+    %strong Released
+  .col-xs-6
+    = @expansion.releasedAt
+%br
 .row
   .col-md-12
     %p

@@ -11,7 +11,7 @@ class MtgDbCard
                 :cardSetId, :token, :promo, :rulings, :formats, :releasedAt
 
   def self.search(name, expansion)
-    MtgDbAPI.search(name, expansion)
+    l = MtgDbAPI.search(name, expansion).map { |x| MtgDbCard.new(x) }
   end
 
   # Define find so that this acts like a normal model in this regard.
@@ -19,25 +19,14 @@ class MtgDbCard
     new(MtgDbAPI.card_by_id(id))
   end
 
-  def card_list
-    printings = Printing.includes(:card, :expansion)
-    list = printings.reduce([]) {
-        |r, e| r << {
-          value: e.to_s,
-          id: e.id,
-          tokens: e.card.name.split(),
-          expansion: e.expansion.name
-      }
-    }
-    respond_to do |format|
-      format.json {render json: list}
-    end
-  end
-
   def initialize(attributes = {})
     attributes.each do |name, value|
       send("#{name}=", value)
     end
+  end
+
+  def expansions_printed
+    MtgDbAPI.search(name, '').map { |x| x['cardSetId'] }
   end
 
   def amount_owned(user)

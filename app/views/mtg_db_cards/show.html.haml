@@ -1,40 +1,50 @@
 %h1 
   = @card.name
 .row
-  .col-md-6 Mana cost
-  .col-md-6
+  .col-xs-2 
+    %strong Mana cost
+  .col-xs-6
     = @card.manaCost
 .row
-  .col-md-6 Type
-  .col-md-6
+  .col-xs-2
+    %strong Type
+  .col-xs-6
     = @card.type
     - if @card.subType
       = " - #{@card.subType}"
 .row
-  .col-md-6 Expansion
-  .col-md-6
+  .col-xs-2 
+    %strong Expansion
+  .col-xs-6
     = @card.cardSetId
 - if @card.creature?
   .row
-    .col-md-6 Power / Toughness
-    .col-md-6
+    .col-xs-2
+      %strong P/T
+    .col-xs-6
       = "#{@card.power} / #{@card.toughness}"
 - if @card.planeswalker?
   .row
-    .col-md-6 Loyalty
-    .col-md-6
+    .col-xs-2
+      %strong Loyalty
+    .col-xs-6
       = @card.loyalty
+%br
 .row 
-  .col-md-6
+  .col-xs-6
     .img-col
       %img(src="http://api.mtgdb.info/content/card_images/#{@card.id}.jpeg")
+  .col-xs-6
+    %p
+      = @card.description
 .row
   - if @card.rulings && !@card.rulings.empty?
-    .col-md-12 Rulings
-    - @card.rulings.each do |ruling|
-      .row
-        .col-md-2
-          = ruling['releasedAt']
-        .col-md-10
-          = ruling['rule']
+    .col-xs-12 
+      %h3 Rulings
+      - @card.rulings.each do |ruling|
+        .row
+          .col-xs-2
+            = ruling['releasedAt']
+          .col-xs-10
+            = ruling['rule']
         

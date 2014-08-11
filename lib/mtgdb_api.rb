@@ -26,7 +26,6 @@ module MtgDbAPI
     return Rails.cache.read(key) if Rails.cache.exist?(key)
 
     l = get_data(EXPANSION_SERVICE, '')
-    #l.map! { |x| MtgDbSet.new(x) }
     Rails.cache.write(key, l)
     l
   end
@@ -54,7 +53,7 @@ module MtgDbAPI
 
     if search && search != ""
       l = search_by_name(search)
-      l = sort_cards(l.map { |x| MtgDbCard.new(x) })
+      l = sort_cards(l)
     end
     Rails.cache.write(key, l)
     l
@@ -65,9 +64,7 @@ module MtgDbAPI
     key = "cards_in_expansion_#{expansion}"
     return Rails.cache.read(key) if Rails.cache.exist?(key)
 
-    l = sort_cards(
-          cards_in_expansion_by_id(expansion)
-          .map { |x| MtgDbCard.new(x) })
+    l = sort_cards(cards_in_expansion_by_id(expansion))
 
     Rails.cache.write(key, l)
     l
@@ -89,13 +86,13 @@ module MtgDbAPI
 
     if cards && expansion
       # Filter cards by expansion
-      cards.select! { |x| x.cardSetId == expansion }
+      cards.select! { |x| x['cardSetId'] == expansion }
     end
 
     cards || []
   end
 
   def self.sort_cards(cards)
-    cards.sort_by! { |card| [card.name, card.cardSetId] }
+    cards.sort_by! { |card| [card['name'], card['cardSetId']] }
   end
 end
