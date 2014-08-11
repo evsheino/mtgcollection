@@ -4,7 +4,7 @@ class ExpansionsController < ApplicationController
   # GET /expansions
   # GET /expansions.json
   def index
-    @expansions = MtgDbAPI.all_expansions
+    @expansions = Expansion.all
   end
 
   # GET /expansions/1

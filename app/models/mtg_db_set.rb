@@ -14,7 +14,7 @@ class MtgDbSet
   end
 
   def self.all
-    MtgDbAPI.all_expansions
+    MtgDbAPI.all_expansions.map { |x| MtgDbSet.new(x) }
   end
 
   def initialize(attributes = {})
@@ -24,7 +24,7 @@ class MtgDbSet
   end
 
   def cards
-    MtgDbAPI.cards_in_expansion_by_id(id)
+    MtgDbAPI.cards_in_expansion_by_id(id).map { |x| MtgDbCard.new(x) }
   end
 
   def persisted?

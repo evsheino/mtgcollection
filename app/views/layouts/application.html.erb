@@ -20,7 +20,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Cards', mtg_db_cards_path %></li>
-        <li><%= link_to 'Expansions', expansions_path %></li>
+        <li><%= link_to 'Expansions', mtg_db_sets_path %></li>
         <li><%= link_to 'Trades', trades_path %></li>
         <% if current_user.nil? %>
           <li><%= link_to 'Sign In', signin_path %></li>

@@ -1,17 +1,14 @@
 %h1 
   = @expansion.name
 .row
-  .col-xs-6 Id
-  .col-xs-6
-    = @expansion.id
-.row
-  .col-xs-6 Block
-  .col-xs-6
-    = @expansion.block
-.row
-  .col-xs-6 Released
-  .col-xs-6
-    = @expansion.releasedAt
+  .col-md-12
+    %dl.dl-horizontal
+      %dt Id
+      %dd= @expansion.id
+      %dt Block
+      %dd= @expansion.block
+      %dt Released
+      %dd= @expansion.releasedAt
 .row
   .col-md-12
     %p
@@ -19,7 +16,23 @@
 .row
   .col-md-12 
     %h3 Cards
-    - @expansion.cards.each do |card|
-      .row
-        .col-md-12
-          = link_to card.name, mtg_db_card_path(card.id)
+    .row
+      .col-xs-4
+        %ul.list-unstyled
+          - count = @expansion.cards.length-1
+          - for i in 0..count/3 do
+            %li
+              - card = @expansion.cards[i]
+              = link_to card.name, mtg_db_card_path(card.id)
+      .col-xs-4
+        %ul.list-unstyled
+          - for i in count/3+1..count-count/3 do
+            %li
+              - card = @expansion.cards[i]
+              = link_to card.name, mtg_db_card_path(card.id)
+      .col-xs-4
+        %ul.list-unstyled
+          - for i in count-count/3..count do
+            %li
+              - card = @expansion.cards[i]
+              = link_to card.name, mtg_db_card_path(card.id)

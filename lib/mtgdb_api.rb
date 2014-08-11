@@ -26,7 +26,7 @@ module MtgDbAPI
     return Rails.cache.read(key) if Rails.cache.exist?(key)
 
     l = get_data(EXPANSION_SERVICE, '')
-    l.map! { |x| MtgDbSet.new(x) }
+    #l.map! { |x| MtgDbSet.new(x) }
     Rails.cache.write(key, l)
     l
   end
@@ -36,7 +36,7 @@ module MtgDbAPI
     return Rails.cache.read(key) if Rails.cache.exist?(key)
 
     url = "#{WEBSERVICE_URL}/#{EXPANSION_SERVICE}/#{id}/cards"
-    cards = HTTParty.get(url).parsed_response.map { |x| MtgDbCard.new(x) }
+    cards = HTTParty.get(url).parsed_response
     Rails.cache.write(key, cards)
     cards
   end
