@@ -1,6 +1,6 @@
-<h1>Editing owned_card</h1>
+<h1>Editing owned card</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @owned_card %> |
+<%= link_to 'Show', mtg_db_card_path(@owned_card.printing.multiverse_id) %> |
 <%= link_to 'Back', owned_cards_path %>

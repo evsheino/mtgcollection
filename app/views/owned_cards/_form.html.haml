@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    = form_for(@owned_card, class: 'form-inline') do |f|
+      - if @owned_card.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@owned_card.errors.count, "error")
+            prohibited this owned card from being saved:
+          %ul
+            - @owned_card.errors.full_messages.each do |msg|
+              %li= msg
+      .form-group
+        %h2= @cards.first.card
+      .form-group
+        = f.label :expansion
+        = f.select :printing_id, options_from_collection_for_select(@cards, :id, :expansion)
+      .form-group
+        = f.label :number
+        = f.number_field :number
+      .form-group
+        = f.submit(class: 'btn btn-primary')
