@@ -27,7 +27,7 @@ class MtgDbCardsController < ApplicationController
 
   def add_to_collection
     respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, 1)
+      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, 1, params[:foil] || false)
       @card = MtgDbCardDecorator.decorate(@card)
       format.js { render 'mtg_db_cards/update_owned' }
     end
@@ -35,7 +35,7 @@ class MtgDbCardsController < ApplicationController
   
   def deduct_from_collection
     respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, -1)
+      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, -1, params[:foil] || false)
       @card = MtgDbCardDecorator.decorate(@card)
       format.js { render 'mtg_db_cards/update_owned' }
     end

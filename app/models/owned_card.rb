@@ -8,10 +8,10 @@ class OwnedCard < ActiveRecord::Base
   validates_numericality_of :number, greater_than: 0, only_integer: true
   validates_uniqueness_of :printing_id, scope: [:user_id, :foil, :signed, :altered]
 
-  def self.add_or_update_from_mtg_db_card(card, user, amount)
+  def self.add_or_update_from_mtg_db_card(card, user, amount, foil)
     printing = Printing.find_or_create_from_mtg_db_card(card)
 
-    owned_card = find_or_initialize_by(printing: printing, user: user)
+    owned_card = find_or_initialize_by(printing: printing, user: user, foil: foil)
     owned_card.number = 0 if owned_card.number.nil?
     owned_card.number += amount
 
@@ -63,6 +63,10 @@ class OwnedCard < ActiveRecord::Base
 
   def amount_available
     number - loaned.sum(:number) + borrowed.sum(:number)
+  end
+
+  def foils
+    OwnedCard.where(printing_id: printing_id, user_id: user_id, foil: true).sum(:number)
   end
 
   def to_s

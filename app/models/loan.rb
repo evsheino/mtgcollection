@@ -9,17 +9,16 @@ class Loan < ActiveRecord::Base
 
   def validate_users
     if owner.nil? && borrower.nil?
-      errors.add("User required")
-    else
-      if owner_id == borrower_id
+      errors.add(:owner, "Owner or borrower required")
+      errors.add(:borrower, "Owner or borrower required")
+    elsif owner_id == borrower_id
         errors.add("Owner and borrower cannot be the same")
-      else
-        if owner.nil? && owner_name.nil?
-          errors.add(:owner, "is required")
-        end
-        if borrower.nil? && borrower_name.nil?
-          errors.add(:borrower, "is required")
-        end
+    else
+      if owner.nil? && owner_name.blank?
+        errors.add(:owner, "is required")
+      end
+      if borrower.nil? && borrower_name.blank?
+        errors.add(:borrower, "is required")
       end
     end
   end

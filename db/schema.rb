@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731192716) do
+ActiveRecord::Schema.define(version: 20140816161157) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140731192716) do
     t.string   "owner_name"
     t.integer  "borrower_id"
     t.integer  "owner_id"
+    t.boolean  "foil"
   end
 
   create_table "owned_cards", force: true do |t|

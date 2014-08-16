@@ -16,12 +16,11 @@ class LoansController < ApplicationController
   # GET /loans/new
   def new
     @loan = Loan.new
-    @users = User.all
-    @cards = OwnedCard.where(user: current_user)
   end
 
   # GET /loans/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /loans
@@ -33,7 +32,7 @@ class LoansController < ApplicationController
 
     respond_to do |format|
       if @loan.save
-        format.html { redirect_to @loan, notice: 'Loan was successfully created.' }
+        format.html { redirect_to loans_path, notice: 'Loan was successfully created.' }
         format.json { render action: 'show', status: :created, location: @loan }
       else
         format.html { render action: 'new' }
@@ -47,7 +46,7 @@ class LoansController < ApplicationController
   def update
     respond_to do |format|
       if @loan.update(loan_params)
-        format.html { redirect_to @loan, notice: 'Loan was successfully updated.' }
+        format.html { redirect_to loans_path, notice: 'Loan was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

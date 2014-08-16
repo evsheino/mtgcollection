@@ -8,38 +8,24 @@
             - @loan.errors.full_messages.each do |msg|
               %li= msg
 
-  .row
-    .col-md-4
-      .form-group
-        = f.label :owner
-        - if @loan.owner.nil?
-          = f.select(:owner_id, @users)
-        - else
-          %p.form-control-static
-            = @loan.owner
-  .row
-    .col-md-4
-      .form-group
-        = f.label :borrower_id
-        - if @loan.borrower.nil?
-          = f.select(:borrower_id, @users)
-        - else
-          %p.form-control-statix
-            = @loan.borrower
-  .row
-    .col-md-4
-      .form-group
-        = f.label :card
-        = f.select(:owned_card_id, @cards)
-  .row
-    .col-md-4
-      .form-group
-        = f.label :number
-        = f.number_field :number
-  .row
-    .col-md-4
-      .form-group
-        = f.label :note
-        = f.text_field :note
-  .actions
-    = f.submit 'Save'
+  .form-group
+    %h3.form-control-static
+      = @loan.printing
+      = " *FOIL*" if @loan.foil
+  .form-group
+    = f.label(:owner, class: 'control-label')
+    %p.form-control-static
+      = @loan.owner || @loan.owner_name
+  .form-group
+    = f.label(:borrower, class: 'control-label')
+    %p.form-control-static
+      = @loan.borrower || @loan.borrower_name
+  .form-group
+    = f.label :number
+    = f.number_field :number, class: 'form-control'
+  .form-group
+    = f.label :note
+    = f.text_area :note, class: 'form-control'
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'
+

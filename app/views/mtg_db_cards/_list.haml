@@ -11,7 +11,7 @@
     - cards.each do |card|
       %tr{id: card.id}
         %td.card-name= link_to card.name, mtg_db_card_path(card.id)
-        %td.card-expansion= link_to card.cardSetId, ""
+        %td.card-expansion= link_to card.cardSetId, mtg_db_set_path(card.cardSetId)
         %td.amount-owned
           = card.owned_and_available
         %td.plus-minus-button-container
@@ -28,7 +28,7 @@
           = form_tag({ controller: 'mtg_db_cards', action: 'borrow' }, 
                   { format: :js, remote: true, class: 'form-inline'})  do
             .form-group
-              = label_tag(:number)
+              = label_tag(:number, nil, class: 'sr-only')
               = number_field_tag(:number, 1, {min: 1, class: 'small-number form-control'})
             .form-group
               = label_tag(:owner, nil, class: 'sr-only')
@@ -40,5 +40,8 @@
               = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
                   placeholder: 'Note'})
             .form-group
-              = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
-              = button_tag "Add", class: 'btn btn-primary'
+              = label_tag :foil do
+                = check_box_tag :foil
+                Foil
+            = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
+            = button_tag "Add", class: 'btn btn-primary'

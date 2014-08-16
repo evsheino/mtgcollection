@@ -13,6 +13,7 @@
           %th Card
           %th Expansion
           %th Number
+          %th Foil
           %th
           %th
       %tbody
@@ -21,6 +22,7 @@
             %td= link_to owned_card.card, mtg_db_card_path(owned_card.printing.multiverse_id)
             %td= link_to owned_card.expansion, mtg_db_set_path(owned_card.expansion.code)
             %td.amount-owned= owned_card.owned_and_available
+            %td.foils-owned= owned_card.foil
             %td.plus-minus-button-container
               = button_to "+", { controller: 'mtg_db_cards', action: "add_to_collection", 
                   id: owned_card.printing.multiverse_id }, 

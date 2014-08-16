@@ -1,6 +1,11 @@
 class OwnedCardDecorator < ApplicationDecorator
   delegate_all
 
+  def name
+    name = object.card
+    name += " *FOIL*" if object.foil
+  end
+
   def foil
     pretty_boolean(object.foil)
   end
