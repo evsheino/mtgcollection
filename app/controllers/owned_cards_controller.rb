@@ -4,7 +4,13 @@ class OwnedCardsController < ApplicationController
   # GET /owned_cards
   # GET /owned_cards.json
   def index
-    @owned_cards = OwnedCard.paginate(page: params[:page]).decorate
+    if params[:name] || params[:expansion]
+      owned_cards = OwnedCard.search(params[:name], params[:expansion], current_user.id)
+    else
+      owned_cards = OwnedCard.where(user_id: current_user.id)
+    end
+    @owned_cards = owned_cards.includes(:printing, :loans, :user, :card, :expansion)
+        .paginate(page: params[:page]).decorate
   end
 
   # GET /owned_cards/1

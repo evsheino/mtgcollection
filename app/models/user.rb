@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   has_many :owned_cards
   has_many :printings, through: :owned_cards
   has_many :cards, through: :printings
-  has_many :loans
+  has_many :loans, foreign_key: 'owner_id', class_name: 'Loan'
+  has_many :borrowings, foreign_key: 'borrower_id', class_name: 'Loan'
 
   has_secure_password
 

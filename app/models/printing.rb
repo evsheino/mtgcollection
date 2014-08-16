@@ -3,6 +3,7 @@ class Printing < ActiveRecord::Base
   belongs_to :expansion
   has_many :owned_cards
   has_many :users, through: :owned_cards
+  has_many :loans
 
   validates_uniqueness_of :card_id, scope: :expansion_id
   validates :multiverse_id, presence: true, uniqueness: true
@@ -45,6 +46,9 @@ class Printing < ActiveRecord::Base
   end
 
   def self.find_or_create_by_multiverse_id(id)
+    printing = find_by(multiverse_id: id)
+    return printing unless printing.nil?
+
     mtg_db_card = MtgDbCard.find(id)
     find_or_create_from_mtg_db_card(mtg_db_card)
   end

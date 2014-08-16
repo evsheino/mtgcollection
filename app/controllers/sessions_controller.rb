@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       sign_in user
-      redirect_to user, notice: "Succesfully signed in"
+      redirect_to :root, notice: "Succesfully signed in"
     else
       redirect_to :back, alert: 'Username and password do not match!'
     end

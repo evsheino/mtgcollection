@@ -1,0 +1,8 @@
+= form_tag url, method: 'get', class: 'form-inline' do
+  .form-group
+    = label_tag :name, nil, class: 'sr-only'
+    = text_field_tag :name, params[:name], placeholder: 'Card name'
+  .form-group
+    = label_tag :expansion, nil, class: 'sr-only'
+    = text_field_tag :expansion, params[:expansion], placeholder: 'Expansion'
+  = submit_tag "Search", name: nil, class: 'btn btn-primary'

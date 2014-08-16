@@ -1,10 +1,5 @@
 %h1 Card Search
-= form_tag mtg_db_cards_path, method: 'get' do
-  Name 
-  = text_field_tag :name, params[:name]
-  Expansion 
-  = text_field_tag :expansion, params[:expansion]
-  = submit_tag "Search", name: nil, class: 'btn btn-primary'
+= render 'shared/search_form', url: mtg_db_cards_path
 - if @cards
   = render 'list', :cards => @cards
   = will_paginate @cards
