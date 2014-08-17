@@ -1,5 +1,5 @@
 class OwnedCardsController < ApplicationController
-  before_action :set_owned_card, only: [:show, :edit, :update, :destroy, :add, :deduct]
+  before_action :set_owned_card, only: [:show, :edit, :update, :destroy, :add, :deduct, :loan]
 
   # GET /owned_cards
   # GET /owned_cards.json
@@ -30,6 +30,33 @@ class OwnedCardsController < ApplicationController
       @card = @owned_card.decorate
 
       format.js { render 'mtg_db_cards/update_owned' }
+    end
+  end
+
+  def loan
+    borrower_name = params[:borrower]
+    borrower = User.find_by(username: borrower_name)
+    if borrower.nil?
+      loan = Loan.find_or_initialize_by(owner_id: current_user.id,
+                                        borrower_name: borrower_name,
+                                        printing_id: @owned_card.printing_id,
+                                        foil: params[:foil] == 1 ? true : false)
+    else
+      loan = Loan.find_or_initialize_by(owner_id: current_user.id,
+                                        borrower_id: borrower.id,
+                                        printing_id: @owned_card.printing_id,
+                                        foil: params[:foil] == 1 ? true : false)
+    end
+
+    if loan.number.nil? then loan.number = 0 end
+    loan.number += params[:number].to_i
+    loan.note = params[:note]
+
+    respond_to do |format|
+      if loan.save
+        flash[:notice] = "Loan succesfully created"
+        format.html { redirect_to action: 'index' }
+      end
     end
   end
     

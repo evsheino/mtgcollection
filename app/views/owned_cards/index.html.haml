@@ -17,10 +17,12 @@
           %th Note
           %th
           %th
+          %th
+          %th
       %tbody
         - @owned_cards.each do |owned_card|
           %tr{id: owned_card.id }
-            %td= link_to owned_card.name, edit_owned_card_path(owned_card.id)
+            %td= link_to owned_card.name, mtg_db_card_path(owned_card.printing.multiverse_id)
             %td= link_to owned_card.expansion, mtg_db_set_path(owned_card.expansion.code)
             %td.amount-owned= owned_card.number
             %td.card-condition= owned_card.condition
@@ -33,5 +35,31 @@
               = button_to "-", { action: "deduct", 
                   id: owned_card.id }, 
                   remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
+            %td.plus-minus-button-container
+              = button_tag "Loan", { id: "btn-loan-#{owned_card.id}", 
+                  class: 'btn btn-primary btn-borrow', data: {target: "#loan-form-#{owned_card.id}"}}
+            %td= link_to 'Edit', edit_owned_card_path(owned_card.id), class: 'btn btn-primary'
+          %tr{id: "loan-form-#{owned_card.id}", hidden: true}
+            %td{colspan: 9}
+              = form_tag({ action: 'loan', id: owned_card.id }, 
+                      { class: 'form-inline'})  do
+                .form-group
+                  = label_tag(:number, nil, class: 'sr-only')
+                  = number_field_tag(:number, 1, {min: 1, class: 'small-number form-control'})
+                .form-group
+                  = label_tag(:owner, nil, class: 'sr-only')
+                  = text_field_tag(:borrower, nil, {class: 'user-select typeahead form-control', 
+                      placeholder: 'Borrower', data: {target: "#borrower_id_#{owned_card.id}"}})
+                  = hidden_field_tag(:borrower_id, nil, id: "borrower_id_#{owned_card.id}")
+                .form-group
+                  = label_tag(:note, nil, class: 'sr-only')
+                  = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
+                      placeholder: 'Note'})
+                .form-group
+                  = label_tag :foil do
+                    = check_box_tag :foil
+                    Foil
+                = hidden_field_tag(:card_id, owned_card.id, id: "owned_card_id_#{owned_card.id}")
+                = button_tag "Add", class: 'btn btn-primary'
     %br/
     = will_paginate @owned_cards
