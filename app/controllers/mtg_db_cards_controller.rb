@@ -27,7 +27,8 @@ class MtgDbCardsController < ApplicationController
 
   def add_to_collection
     respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, 1, params[:foil] || false)
+      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user.id, 1, 
+                                               params[:foil] == 1 ? true : false)
       @card = MtgDbCardDecorator.decorate(@card)
       format.js { render 'mtg_db_cards/update_owned' }
     end
@@ -35,7 +36,8 @@ class MtgDbCardsController < ApplicationController
   
   def deduct_from_collection
     respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, -1, params[:foil] || false)
+      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, -1, 
+                                               params[:foil] == 1 ? true : false)
       @card = MtgDbCardDecorator.decorate(@card)
       format.js { render 'mtg_db_cards/update_owned' }
     end
@@ -64,7 +66,7 @@ class MtgDbCardsController < ApplicationController
     respond_to do |format|
       @card = MtgDbCardDecorator.decorate(card)
       @loan = loan
-      format.js { render 'mtg_db_cards/update_loan' }
+      format.js { render 'mtg_db_cards/update_owned' }
     end
   end
 
@@ -74,8 +76,4 @@ class MtgDbCardsController < ApplicationController
       @card = MtgDbCard.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mtg_db_card_params
-      params[:mtg_db_card, :number]
-    end
 end

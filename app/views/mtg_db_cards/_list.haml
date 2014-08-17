@@ -15,11 +15,8 @@
         %td.amount-owned
           = card.owned_and_available
         %td.plus-minus-button-container
-          = button_to "+", { action: "add_to_collection", id: card.id }, 
-              remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
-        %td.plus-minus-button-container
-          = button_to "-", { action: "deduct_from_collection", id: card.id }, 
-              remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
+          = button_tag "+", { id: "btn-add-#{card.id}", 
+              class: 'btn btn-primary btn-borrow', data: {target: "#add-form-#{card.id}"}}
         %td.plus-minus-button-container
           = button_tag "Borrow", { id: "btn-borrow-#{card.id}", 
               class: 'btn btn-primary btn-borrow', data: {target: "#loan-form-#{card.id}"}}
@@ -43,5 +40,22 @@
               = label_tag :foil do
                 = check_box_tag :foil
                 Foil
+            = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
+            = button_tag "Add", class: 'btn btn-primary'
+      %tr{id: "add-form-#{card.id}", hidden: true}
+        %td{colspan: 6}
+          = form_tag({ action: 'add_to_collection', id: card.id }, 
+                  { format: :js, remote: true, class: 'form-inline'})  do
+            .form-group
+              = label_tag(:number, nil, class: 'sr-only')
+              = number_field_tag(:number, 1, {min: 1, class: 'small-number form-control'})
+            .form-group
+              = label_tag :foil do
+                = check_box_tag :foil
+                Foil
+            .form-group
+              = label_tag(:note, nil, class: 'sr-only')
+              = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
+                  placeholder: 'Note'})
             = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
             = button_tag "Add", class: 'btn btn-primary'

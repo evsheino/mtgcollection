@@ -17,8 +17,10 @@ Mtgcollection::Application.routes.draw do
     get 'list_cards', on: :member
   end
 
-  get "places/index"
-  resources :owned_cards
+  resources :owned_cards do
+    post 'add', on: :member
+    post 'deduct', on: :member
+  end
 
   resources :printings
   get 'data/printing_list', to: 'printings#card_list'

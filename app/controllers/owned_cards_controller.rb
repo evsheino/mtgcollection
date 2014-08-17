@@ -1,5 +1,5 @@
 class OwnedCardsController < ApplicationController
-  before_action :set_owned_card, only: [:show, :edit, :update, :destroy]
+  before_action :set_owned_card, only: [:show, :edit, :update, :destroy, :add, :deduct]
 
   # GET /owned_cards
   # GET /owned_cards.json
@@ -13,6 +13,26 @@ class OwnedCardsController < ApplicationController
         .paginate(page: params[:page]).decorate
   end
 
+  def add
+    respond_to do |format|
+      @owned_card.number += 1
+      @owned_card.save
+      @card = @owned_card.decorate
+
+      format.js { render 'mtg_db_cards/update_owned' }
+    end
+  end
+
+  def deduct
+    respond_to do |format|
+      @owned_card.number -= 1
+      @owned_card.save
+      @card = @owned_card.decorate
+
+      format.js { render 'mtg_db_cards/update_owned' }
+    end
+  end
+    
   # GET /owned_cards/1
   # GET /owned_cards/1.json
   def show

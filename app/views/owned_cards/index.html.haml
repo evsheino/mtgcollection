@@ -13,23 +13,21 @@
           %th Card
           %th Expansion
           %th Number
-          %th Foil
           %th
           %th
       %tbody
         - @owned_cards.each do |owned_card|
-          %tr{id: owned_card.printing.multiverse_id }
-            %td= link_to owned_card.card, mtg_db_card_path(owned_card.printing.multiverse_id)
+          %tr{id: owned_card.id }
+            %td= link_to owned_card.name, mtg_db_card_path(owned_card.printing.multiverse_id)
             %td= link_to owned_card.expansion, mtg_db_set_path(owned_card.expansion.code)
-            %td.amount-owned= owned_card.owned_and_available
-            %td.foils-owned= owned_card.foil
+            %td.amount-owned= owned_card.number
             %td.plus-minus-button-container
-              = button_to "+", { controller: 'mtg_db_cards', action: "add_to_collection", 
-                  id: owned_card.printing.multiverse_id }, 
+              = button_to "+", { action: "add", 
+                  id: owned_card.id }, 
                   remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
             %td.plus-minus-button-container
-              = button_to "-", { controller: 'mtg_db_cards', action: "deduct_from_collection", 
-                  id: owned_card.printing.multiverse_id }, 
+              = button_to "-", { action: "deduct", 
+                  id: owned_card.id }, 
                   remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
     %br/
     = will_paginate @owned_cards

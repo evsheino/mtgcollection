@@ -5,21 +5,17 @@ class OwnedCard < ActiveRecord::Base
   has_one :expansion, through: :printing
   has_many :loans, through: :printing
 
-  validates_numericality_of :number, greater_than: 0, only_integer: true
+  validates_numericality_of :number, only_integer: true
   validates_uniqueness_of :printing_id, scope: [:user_id, :foil, :signed, :altered]
 
-  def self.add_or_update_from_mtg_db_card(card, user, amount, foil)
+  def self.add_or_update_from_mtg_db_card(card, user_id, amount, foil)
     printing = Printing.find_or_create_from_mtg_db_card(card)
 
-    owned_card = find_or_initialize_by(printing: printing, user: user, foil: foil)
+    owned_card = find_or_initialize_by(printing_id: printing.id, user_id: user_id, foil: foil)
     owned_card.number = 0 if owned_card.number.nil?
     owned_card.number += amount
 
-    if owned_card.number == 0
-      owned_card.delete
-    else
-      owned_card.save!
-    end
+    owned_card.save!
 
     owned_card
   end
@@ -50,6 +46,22 @@ class OwnedCard < ActiveRecord::Base
       joins(:printing).joins(:card).joins(:expansion)
           .where('expansion.code LIKE ? AND cards.name LIKE ? AND owned_cards.user_id = ?',
                  "%#{expansion.strip}%", "%#{card_name.strip}%", "%#{user_id}%")
+    end
+  end
+
+  def save
+    if number < 1
+      delete
+    else
+      super
+    end
+  end
+
+  def save!
+    if number < 1
+      delete
+    else
+      super
     end
   end
 

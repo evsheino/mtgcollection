@@ -2,8 +2,7 @@ class OwnedCardDecorator < ApplicationDecorator
   delegate_all
 
   def name
-    name = object.card
-    name += " *FOIL*" if object.foil
+    "#{object.card}#{' *FOIL*' if object.foil}"
   end
 
   def foil
@@ -22,19 +21,8 @@ class OwnedCardDecorator < ApplicationDecorator
     'X' if bool
   end
 
-  def available
-    number = object.amount_available
-    if number == 0 then nil else number end
-  end
-
   def owned_and_available
-    o = object.number
-    a = available
-    if a != o
-      "#{o || 0} (#{a})"
-    else
-      o
-    end
+    object.number
   end
 
 end
