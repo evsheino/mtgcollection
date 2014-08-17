@@ -13,14 +13,18 @@
           %th Card
           %th Expansion
           %th Number
+          %th Condition
+          %th Note
           %th
           %th
       %tbody
         - @owned_cards.each do |owned_card|
           %tr{id: owned_card.id }
-            %td= link_to owned_card.name, mtg_db_card_path(owned_card.printing.multiverse_id)
+            %td= link_to owned_card.name, edit_owned_card_path(owned_card.id)
             %td= link_to owned_card.expansion, mtg_db_set_path(owned_card.expansion.code)
             %td.amount-owned= owned_card.number
+            %td.card-condition= owned_card.condition
+            %td.card-note= owned_card.note
             %td.plus-minus-button-container
               = button_to "+", { action: "add", 
                   id: owned_card.id }, 

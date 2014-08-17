@@ -46,7 +46,8 @@ class OwnedCardsController < ApplicationController
 
   # GET /owned_cards/1/edit
   def edit
-    @cards = @owned_card.printing.card.printings
+    @conditions = OwnedCard.conditions
+    @owned_card = @owned_card.decorate
   end
 
   # POST /owned_cards
@@ -72,7 +73,7 @@ class OwnedCardsController < ApplicationController
   def update
     respond_to do |format|
       if @owned_card.user == current_user && @owned_card.update(owned_card_params)
-        format.html { redirect_to @owned_card, notice: 'Owned card was successfully updated.' }
+        format.html { redirect_to owned_cards_path, notice: 'Owned card was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -102,6 +103,6 @@ class OwnedCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def owned_card_params
-      params.require(:owned_card).permit(:printing_id, :user_id, :number)
+      params.require(:owned_card).permit(:printing_id, :user_id, :number, :foil, :condition, :note)
     end
 end

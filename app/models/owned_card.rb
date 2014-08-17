@@ -6,12 +6,17 @@ class OwnedCard < ActiveRecord::Base
   has_many :loans, through: :printing
 
   validates_numericality_of :number, only_integer: true
-  validates_uniqueness_of :printing_id, scope: [:user_id, :foil, :signed, :altered]
+  validates_uniqueness_of :printing_id, scope: [:user_id, :foil, :condition, :note]
 
-  def self.add_or_update_from_mtg_db_card(card, user_id, amount, foil)
+  def self.conditions
+    ['NM', 'SP', 'MP', 'HP']
+  end
+
+  def self.add_or_update_from_mtg_db_card(card, user_id, amount, foil=false, condition='NM', note=nil)
     printing = Printing.find_or_create_from_mtg_db_card(card)
 
-    owned_card = find_or_initialize_by(printing_id: printing.id, user_id: user_id, foil: foil)
+    owned_card = find_or_initialize_by(printing_id: printing.id, user_id: user_id, 
+                                       foil: foil, condition: condition, note: note)
     owned_card.number = 0 if owned_card.number.nil?
     owned_card.number += amount
 

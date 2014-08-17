@@ -10,12 +10,15 @@
             - @owned_card.errors.full_messages.each do |msg|
               %li= msg
       .form-group
-        %h2= @cards.first.card
+        %h3= @owned_card.name_with_expansion
       .form-group
-        = f.label :expansion
-        = f.select :printing_id, options_from_collection_for_select(@cards, :id, :expansion)
+        = f.label :condition
+        = f.select :condition, @conditions, class: 'form-control'
       .form-group
         = f.label :number
-        = f.number_field :number
+        = f.number_field :number, class: 'form-control'
+      .form-group
+        = f.label :note
+        = f.text_area :note, class: 'form-control'
       .form-group
         = f.submit(class: 'btn btn-primary')

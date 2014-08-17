@@ -31,14 +31,14 @@ describe "User" do
       expect(page).to have_content 'Username and password do not match!'
     end
 
-    it "has his/her cards listed on his/her page" do
+    it "has his/her cards listed on the owned cards page" do
       sign_in 'Pekka', 'foobar1'
 
       card = FactoryGirl.create(:card, name: 'Grey Ogre')
       printing = FactoryGirl.create(:printing, card: card)
       OwnedCard.create(user: user, printing: printing, number: 1)
 
-      visit user_path(user)
+      visit owned_cards_path
 
       expect(page).to have_content 'Grey Ogre'
       expect(page).to have_content '1'

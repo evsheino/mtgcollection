@@ -5,6 +5,10 @@ class OwnedCardDecorator < ApplicationDecorator
     "#{object.card}#{' *FOIL*' if object.foil}"
   end
 
+  def name_with_expansion
+    "#{name} (#{object.expansion.code})"
+  end
+
   def foil
     pretty_boolean(object.foil)
   end
