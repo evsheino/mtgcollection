@@ -20,9 +20,9 @@
         %td.plus-minus-button-container
           = button_tag "Borrow", { id: "btn-borrow-#{card.id}", 
               class: 'btn btn-primary btn-toggle-form', data: {target: "#loan-form-#{card.id}"}}
-      %tr{id: "loan-form-#{card.id}", hidden: true}
+      %tr{id: "loan-form-#{card.id}", class: 'hidden-form-container', hidden: true}
         %td{colspan: 6}
           = render 'borrow_form', card: card
-      %tr{id: "add-form-#{card.id}", hidden: true}
+      %tr{id: "add-form-#{card.id}", class: 'hidden-form-container', hidden: true}
         %td{colspan: 6}
           = render 'add_to_collection', card: card, conditions: @conditions

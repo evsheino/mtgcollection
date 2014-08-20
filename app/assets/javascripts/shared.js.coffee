@@ -1,6 +1,8 @@
 initializeFormToggle = ->
   $('.btn-toggle-form').click -> 
     target = $(@).data().target
+    if $(target).is(':hidden')
+      $('.hidden-form-container').hide()
     $(target).toggle()
     initializeUserAutocomplete(target)
 
