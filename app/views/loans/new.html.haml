@@ -13,25 +13,38 @@
   .row
     .col-md-4
       .form-group
-        = f.label :owner
+        = f.label(:owner)
+        = f.hidden_field(:owner_id, id: "borrower_id")
         - if @loan.owner.nil?
-          = f.select(:owner_id, @users)
+          = f.label(:owner_name, nil, class: 'sr-only')
+          = f.text_field(:owner_name, {class: 'user-select typeahead form-control', 
+              placeholder: 'Owner', data: {target: "#borrower_id"}})
         - else
           %p.form-control-static
             = @loan.owner
     .col-md-4
       .form-group
-        = f.label :borrower_id
+        = f.label(:borrower)
+        = f.hidden_field(:borrower_id, id: "borrower_id")
         - if @loan.borrower.nil?
-          = f.select(:borrower_id, @users)
+          = f.label(:borrower_name, nil, class: 'sr-only')
+          = f.text_field(:borrower_name, {class: 'user-select typeahead form-control', 
+              placeholder: 'Borrower', data: {target: "#borrower_id"}})
         - else
           %p.form-control-static
             = @loan.borrower
   .row
-    .col-md-4
+    .col-md-12
+      .form-group
+        = f.label :number
+        = f.number_field :number, class: 'form-control'
+        = f.hidden_field(:foil)
+        = f.hidden_field(:printing_id)
+  .row
+    .col-md-12
       .form-group
         = f.label :note
-        = f.text_field :note
+        = f.text_field :note, class: 'form-control'
   .actions
     = f.submit 'Save'
 
