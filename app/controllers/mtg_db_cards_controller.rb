@@ -37,17 +37,6 @@ class MtgDbCardsController < ApplicationController
     end
   end
   
-  def deduct_from_collection
-    respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user,
-                                               -params[:number].to_i, 
-                                               params[:foil] == 1 ? true : false,
-                                               params[:condition], params[:note])
-      @card = MtgDbCardDecorator.decorate(@card)
-      format.js { render 'mtg_db_cards/update_owned' }
-    end
-  end
-
   def borrow
     card = MtgDbCard.find(params[:card_id])
     printing = Printing.find_or_create_from_mtg_db_card(card)

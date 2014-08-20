@@ -20,6 +20,7 @@ handleAutocomplete = ->
   $(".user-select").on "typeahead:autocompleted", (e, i) -> setUserId(e, i)
   $(".user-select").on "typeahead:selected", (e, i) -> setUserId(e, i)
 
+
 $(document).on "page:load", ->
   handleAutocomplete()
   initializeFormToggle()
@@ -27,3 +28,10 @@ $(document).on "page:load", ->
 $(document).ready ->
   handleAutocomplete()
   initializeFormToggle()
+
+$(document).ajaxSend( (event, xhr, options) ->
+  $('.loading-indicator').show()
+)
+$(document).ajaxComplete( (event, xhr, options) ->
+  $('.loading-indicator').hide()
+)

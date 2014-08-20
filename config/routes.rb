@@ -36,7 +36,6 @@ Mtgcollection::Application.routes.draw do
 
   resources :mtg_db_cards do
     post 'add_to_collection', on: :member
-    post 'deduct_from_collection', on: :member
   end
   post 'mtg_db_cards/borrow', to: 'mtg_db_cards#borrow'
 

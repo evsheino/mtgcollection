@@ -15,4 +15,5 @@
     = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
         placeholder: 'Note'})
   = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
-  = button_tag "Add", class: 'btn btn-primary'
+  = button_tag "Add", class: 'btn btn-primary btn-remote', data: { loader: "#loading-indicator-#{card.id}" }
+  = image_tag 'ajax-loader.gif', id: "loading-indicator-#{card.id}", class: 'loading-indicator', hidden: true
