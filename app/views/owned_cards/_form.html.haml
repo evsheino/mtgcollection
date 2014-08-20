@@ -13,7 +13,7 @@
         %h3= @owned_card.name_with_expansion
       .form-group
         = f.label :condition
-        = f.select :condition, @conditions, class: 'form-control'
+        = f.select :condition, @conditions, {}, { class: 'form-control' }
       .form-group
         = f.label :number
         = f.number_field :number, class: 'form-control'
