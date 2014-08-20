@@ -16,10 +16,10 @@
           = card.owned_and_available
         %td.plus-minus-button-container
           = button_tag "+", { id: "btn-add-#{card.id}", 
-              class: 'btn btn-primary btn-borrow', data: {target: "#add-form-#{card.id}"}}
+              class: 'btn btn-primary btn-toggle-form', data: {target: "#add-form-#{card.id}"}}
         %td.plus-minus-button-container
           = button_tag "Borrow", { id: "btn-borrow-#{card.id}", 
-              class: 'btn btn-primary btn-borrow', data: {target: "#loan-form-#{card.id}"}}
+              class: 'btn btn-primary btn-toggle-form', data: {target: "#loan-form-#{card.id}"}}
       %tr{id: "loan-form-#{card.id}", hidden: true}
         %td{colspan: 6}
           = form_tag({ controller: 'mtg_db_cards', action: 'borrow' }, 
@@ -41,7 +41,7 @@
                 = check_box_tag :foil
                 Foil
             = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
-            = button_tag "Add", class: 'btn btn-primary'
+            = button_tag "Borrow", class: 'btn btn-primary'
       %tr{id: "add-form-#{card.id}", hidden: true}
         %td{colspan: 6}
           = form_tag({ action: 'add_to_collection', id: card.id }, 

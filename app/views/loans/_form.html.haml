@@ -10,8 +10,7 @@
 
   .form-group
     %h3.form-control-static
-      = @loan.printing
-      = " *FOIL*" if @loan.foil
+      = @loan.card
   .form-group
     = f.label(:owner, class: 'control-label')
     %p.form-control-static

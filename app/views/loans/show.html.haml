@@ -1,21 +1,32 @@
-%p#notice= notice
+.row
+  .col-md-12
+    %h3= link_to @loan.card, mtg_db_card_path(@loan.printing.multiverse_id)
+.row
+  .col-md-12
+    %b Owner
+.row
+  .col-md-12
+    = @loan.owner
+.row
+  .col-md-12
+    %b Borrower
+.row
+  .col-md-12
+    = @loan.borrower
+.row
+  .col-md-12
+    %b Number
+.row
+  .col-md-12
+    = @loan.number
+.row
+  .col-md-12
+    %b Note
+.row
+  .col-md-12
+    = @loan.note
 
-%p
-  %b Owner:
-  = @loan.owner_id
-%p
-  %b Borrower:
-  = @loan.borrower_id
-%p
-  %b Owned card:
-  = @loan.owned_card_id
-%p
-  %b Number:
-  = @loan.number
-%p
-  %b Note:
-  = @loan.note
-
+%br
 = link_to 'Edit', edit_loan_path(@loan)
 \|
 = link_to 'Back', loans_path

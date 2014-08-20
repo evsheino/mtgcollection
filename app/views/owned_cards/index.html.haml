@@ -37,7 +37,7 @@
                   remote: true, class: 'btn btn-primary btn-plus-minus', form_class: 'form-inline'
             %td.plus-minus-button-container
               = button_tag "Loan", { id: "btn-loan-#{owned_card.id}", 
-                  class: 'btn btn-primary btn-borrow', data: {target: "#loan-form-#{owned_card.id}"}}
+                  class: 'btn btn-primary btn-toggle-form', data: {target: "#loan-form-#{owned_card.id}"}}
             %td= link_to 'Edit', edit_owned_card_path(owned_card.id), class: 'btn btn-primary'
           %tr{id: "loan-form-#{owned_card.id}", hidden: true}
             %td{colspan: 9}

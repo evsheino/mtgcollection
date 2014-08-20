@@ -11,6 +11,7 @@ class LoansController < ApplicationController
   # GET /loans/1
   # GET /loans/1.json
   def show
+    @loan = @loan.decorate
   end
 
   # GET /loans/new
@@ -20,6 +21,7 @@ class LoansController < ApplicationController
 
   # GET /loans/1/edit
   def edit
+    @loan = @loan.decorate
     @users = User.all
   end
 
