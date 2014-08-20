@@ -28,7 +28,8 @@ class MtgDbCardsController < ApplicationController
 
   def add_to_collection
     respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user.id, 1, 
+      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user.id,
+                                               params[:number].to_i, 
                                                params[:foil] == 1 ? true : false,
                                                params[:condition], params[:note])
       @card = MtgDbCardDecorator.decorate(@card)
@@ -38,7 +39,8 @@ class MtgDbCardsController < ApplicationController
   
   def deduct_from_collection
     respond_to do |format|
-      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user, -1, 
+      OwnedCard.add_or_update_from_mtg_db_card(@card, current_user,
+                                               -params[:number].to_i, 
                                                params[:foil] == 1 ? true : false,
                                                params[:condition], params[:note])
       @card = MtgDbCardDecorator.decorate(@card)
