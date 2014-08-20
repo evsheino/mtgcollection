@@ -14,6 +14,8 @@ initializeUserAutocomplete = (target) ->
     prefetch: '/data/user_list.json',
     limit: 10,
   })
+  $("#{target} .user-select").change -> 
+    $($("#{target} .user-select")[0].dataset.target).val('')
 
 setUserId = (event, userInfo) ->
   $($(event.target).data().target).val(userInfo.id)

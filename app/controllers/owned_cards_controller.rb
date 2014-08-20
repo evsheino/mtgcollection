@@ -11,6 +11,7 @@ class OwnedCardsController < ApplicationController
     end
     @owned_cards = owned_cards.includes(:printing, :loans, :user, :card, :expansion)
         .paginate(page: params[:page]).decorate
+    @loan = Loan.new
   end
 
   def add
@@ -33,33 +34,6 @@ class OwnedCardsController < ApplicationController
     end
   end
 
-  def loan
-    borrower_name = params[:borrower]
-    borrower = User.find_by(username: borrower_name)
-    if borrower.nil?
-      loan = Loan.find_or_initialize_by(owner_id: current_user.id,
-                                        borrower_name: borrower_name,
-                                        printing_id: @owned_card.printing_id,
-                                        foil: params[:foil] == 1 ? true : false)
-    else
-      loan = Loan.find_or_initialize_by(owner_id: current_user.id,
-                                        borrower_id: borrower.id,
-                                        printing_id: @owned_card.printing_id,
-                                        foil: params[:foil] == 1 ? true : false)
-    end
-
-    if loan.number.nil? then loan.number = 0 end
-    loan.number += params[:number].to_i
-    loan.note = params[:note]
-
-    respond_to do |format|
-      if loan.save
-        flash[:notice] = "Loan succesfully created"
-        format.html { redirect_to action: 'index' }
-      end
-    end
-  end
-    
   # GET /owned_cards/1
   # GET /owned_cards/1.json
   def show

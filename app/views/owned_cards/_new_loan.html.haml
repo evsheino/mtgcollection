@@ -1,0 +1,18 @@
+= form_for @loan, html: { class: 'form-inline' } do |f|
+  .form-group
+    = f.label(:number, nil, class: 'sr-only')
+    = f.number_field(:number, {value: 1, min: 1, class: 'small-number form-control'})
+  .form-group
+    = f.label(:owner, nil, class: 'sr-only')
+    = f.text_field(:borrower_name, {class: 'user-select typeahead form-control', 
+        placeholder: 'Borrower', data: {target: "#borrower_id_#{owned_card.id}"}})
+    = f.hidden_field(:borrower_id, id: "borrower_id_#{owned_card.id}")
+    = f.hidden_field(:owner_id, value: current_user.id)
+    = f.hidden_field(:foil, value: owned_card.foil)
+    = f.hidden_field(:printing_id, value: owned_card.printing_id)
+  .form-group
+    = f.label(:note, nil, class: 'sr-only')
+    = f.text_area(:note, {rows: 1, class: 'input-sm form-control', 
+        placeholder: 'Note'})
+  = f.hidden_field(:card_id, value: owned_card.id, id: "owned_card_id_#{owned_card.id}")
+  = f.submit "Add", class: 'btn btn-primary'

@@ -32,16 +32,6 @@
       .form-group
         = f.label :note
         = f.text_field :note
-  .row
-    .col-md-4
-      = form_tag mtg_db_cards_path, method: 'get' do
-        Name 
-        = text_field_tag :name, params[:name]
-        Expansion 
-        = text_field_tag :expansion, params[:expansion]
-        = submit_tag "Search", name: nil, class: 'btn btn-primary'
-      - if @cards
-        = render 'list', :cards => @cards
   .actions
     = f.submit 'Save'
 

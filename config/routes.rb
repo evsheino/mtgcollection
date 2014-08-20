@@ -20,7 +20,6 @@ Mtgcollection::Application.routes.draw do
   resources :owned_cards do
     post 'add', on: :member
     post 'deduct', on: :member
-    post 'loan', on: :member
   end
 
   resources :printings
