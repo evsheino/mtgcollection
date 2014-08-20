@@ -13,6 +13,7 @@ class MtgDbCardsController < ApplicationController
           MtgDbCard.search(params[:name], params[:expansion]).paginate(page: params[:page])
         )
         @users = User.all
+        @conditions = OwnedCard.conditions
       }
       format.json {
         render json: MtgDbCard.search(params[:name], params[:expansion])

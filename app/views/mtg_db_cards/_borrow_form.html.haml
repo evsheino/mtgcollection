@@ -1,0 +1,20 @@
+= form_tag({ controller: 'mtg_db_cards', action: 'borrow' }, 
+        { format: :js, remote: true, class: 'form-inline'})  do
+  .form-group
+    = label_tag(:number, nil, class: 'sr-only')
+    = number_field_tag(:number, 1, {min: 1, class: 'small-number form-control'})
+  .form-group
+    = label_tag(:owner, nil, class: 'sr-only')
+    = text_field_tag(:owner, nil, {class: 'user-select typeahead form-control', 
+        placeholder: 'Owner', data: {target: "#owner_id_#{card.id}"}})
+    = hidden_field_tag(:owner_id, nil, id: "owner_id_#{card.id}")
+  .form-group
+    = label_tag(:note, nil, class: 'sr-only')
+    = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
+        placeholder: 'Note'})
+  .form-group
+    = label_tag :foil do
+      = check_box_tag :foil
+      Foil
+  = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
+  = button_tag "Borrow", class: 'btn btn-primary'

@@ -1,0 +1,18 @@
+= form_tag({ action: 'add_to_collection', id: card.id }, 
+        { format: :js, remote: true, class: 'form-inline'})  do
+  .form-group
+    = label_tag(:number, nil, class: 'sr-only')
+    = number_field_tag(:number, 1, {min: 1, class: 'small-number form-control'})
+  .form-group
+    = label_tag(:condition, nil, class: 'sr-only')
+    = select_tag(:condition, options_for_select(conditions), class: 'form-control')
+  .form-group
+    = label_tag :foil do
+      = check_box_tag :foil
+      Foil
+  .form-group
+    = label_tag(:note, nil, class: 'sr-only')
+    = text_area_tag(:note, nil, {rows: 1, class: 'input-sm form-control', 
+        placeholder: 'Note'})
+  = hidden_field_tag(:card_id, card.id, id: "card_id_#{card.id}")
+  = button_tag "Add", class: 'btn btn-primary'
