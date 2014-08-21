@@ -30,7 +30,13 @@ class OwnedCardsController < ApplicationController
       @owned_card.save
       @card = @owned_card.decorate
 
-      format.js { render 'mtg_db_cards/update_owned' }
+      format.js { 
+        if @owned_card.destroyed?
+          render inline: 'location.reload();'
+        else
+          render 'mtg_db_cards/update_owned' 
+        end
+      }
     end
   end
 
