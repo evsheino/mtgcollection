@@ -15,7 +15,7 @@ class MtgDbCardDecorator < ApplicationDecorator
     o = owned
     a = available
     if a != o
-      "#{o || 0} (#{a})"
+      "#{o || 0} (#{a || 0})"
     else
       o
     end
